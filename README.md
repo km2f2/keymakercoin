@@ -4,7 +4,7 @@
 ![](src/qt/res/images/logo.png)
 
 
-## Release V1.1.7.7
+## Release V1.0.0.0
 
 
 Links
@@ -46,7 +46,7 @@ Specifications:
 
 • Algorithm:        Curvehash
 
-• Block Time:       120 seconds
+• Block Time:       60 seconds
 
 • Difficulty:       24 minutes
 
@@ -54,9 +54,9 @@ Specifications:
 
 • RPC Port:         12422
 
-• Max supply:       50,000,000
+• Max supply:       27,000,000
 
-• Premined:         5,000,000
+• Premined:         6,000,000
 
 
 
