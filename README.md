@@ -4,8 +4,6 @@
 ![](src/qt/res/images/logo.png)
 
 
-## Release V1.0.0.0
-
 
 Links
 ----------------
