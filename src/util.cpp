@@ -670,23 +670,24 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
                           "#rpcuser=username\n"
                           "#rpcpassword=password\n"
                           "#server=1\n"
-                          "#gen=0\n"
                           "#listen=1\n"
-                          "daemon=0\n"
+                          "#daemon=0\n"
                           "port=12421\n"
                           "rpcport=12422\n"
-                          "rpcbind=127.0.0.1\n"
                           "maxconnections=48\n"
-                          "#wdrpcallowip=127.0.0.1\n"
+                          "#rpcallowip=127.0.0.1\n"
                           "banscore=10000\n"
                           "\n"
                           "#staking=1\n"
                           "\n"
                           "# Keymaker Official Nodes:\n"
-                          "addnode=seed.keymaker.cc\n"
+                          "addnode=seeder.keymaker.cc\n"
                           "\n"          
                           "# Additional Nodes:\n"
-                          "\n";
+                          "addnode=192.46.222.212:12421\n"
+                          "addnode=198.58.112.148:12421\n";
+               
+
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
         }
