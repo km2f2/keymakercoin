@@ -1,4 +1,3 @@
-
 #Clone Repo
 #git clone https://github.com/keymakercoin/keymakercoin.git
 #cd keymakercoin
