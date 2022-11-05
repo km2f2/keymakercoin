@@ -84,8 +84,8 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        //vSeeds.emplace_back("seeder.keymaker.cc");
-        //vSeeds.emplace_back("seed.keymaker.cc");
+        vSeeds.emplace_back("seeder.keymaker.cc");
+        //vSeeds.emplace_back("seeder2.keymaker.cc");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,46);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,73);

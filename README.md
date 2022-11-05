@@ -31,7 +31,7 @@ If you plan to encrypt your wallet you will need to use this command to allow st
 
 Go to the console, use the command, and keep the wallet open.
 
-walletpassphrase  password 9999999999999999999 true
+walletpassphrase  password 9999999999999999 true
 
 
 
