@@ -81,8 +81,8 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x9f67f1835170e36cb4ec265db7d42542743bba39d9f0cc7f0bb73a7b900860f7"));
         assert(genesis.hashMerkleRoot == uint256S("0xed8f603c29caa485d2f1f6d631ef86132104a667a6a58544d36cb99c2ef0a51e"));
    
-        vFixedSeeds.clear();
-        vSeeds.clear();
+      //  vFixedSeeds.clear();
+      //   vSeeds.clear();
 
         vSeeds.emplace_back("seeder.keymaker.cc");
         //vSeeds.emplace_back("seeder2.keymaker.cc");
