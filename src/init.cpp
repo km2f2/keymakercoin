@@ -792,8 +792,8 @@ void InitLogging()
     version_string += " (release build)";
 #endif
    
-    LogPrintf("░█▄▀▒██▀░▀▄▀░█▄▒▄█▒▄▀▄░█▄▀▒██▀▒█▀▄ \n");
-    LogPrintf("░█▒█░█▄▄░▒█▒░█▒▀▒█░█▀█░█▒█░█▄▄░█▀▄ \n");
+    //LogPrintf("░█▄▀▒██▀░▀▄▀░█▄▒▄█▒▄▀▄░█▄▀▒██▀▒█▀▄ \n");
+    //LogPrintf("░█▒█░█▄▄░▒█▒░█▒▀▒█░█▀█░█▒█░█▄▄░█▀▄ \n");
 
 
     LogPrintf(PACKAGE_NAME " version %s\n", version_string);

@@ -671,7 +671,7 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
                           "#rpcpassword=password\n"
                           "#server=1\n"
                           "#listen=1\n"
-                          "#daemon=0\n"
+                          "daemon=0\n"
                           "port=12421\n"
                           "rpcport=12422\n"
                           "maxconnections=48\n"
