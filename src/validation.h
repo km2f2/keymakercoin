@@ -143,37 +143,6 @@ static const int DEFAULT_STOPATHEIGHT = 0;
 
 
 
-
-/** Keymaker Coin INFO */
-static const int PRE_MINE = 2;
-static const int LAST_POW_BLOCK = 16293600;
-/* Reinício da Fase de Mineração Híbrida */
-static const int POS_POW_HYBRID = 263250;
-/* Fases de Mineração PoW(Halvings) */
-static const int HALVING_POW_03 = 1150000;
-static const int HALVING_POW_04 = 1625600;
-static const int HALVING_POW_05 = 2151200;
-/* Fases de Mineração Pos(Halvings) */
-static const int HALVING_POS_03 = 1150000;
-static const int HALVING_POS_04 = 2151200;
-static const int END_DEV_POS_PAYMENT = 1339000;
-static const int START_FOUNDATION_POW_BLOCKS = 1339200;
-static const int END_FOUNDATION_POW_BLOCKS = 1339211;
-/* Update de Source */
-static const int HARDFORK_SPERO = 3000000;
-
-/* Recompensas PoS */
-static const int64_t MAX_MINT_PROOF_OF_STAKE = 50 * CENT; //0.05 * COIN; //Stake 5% per year
-static const int64_t MAX_MINT_PROOF_OF_STAKE_NEW = 0.25 * COIN; //Stake 25% per year
-static const int64_t MAX_MINT_PROOF_OF_STAKE_NEW_02 = 0.50 * COIN; //Stake 0.50 
-static const int64_t MAX_MINT_PROOF_OF_STAKE_NEW_03 = 0.25 * COIN; //Stake 0.25  
-/* Output console */
-static const int64_t COIN_YEAR_REWARD = 25 * CENT; // 25% per year (output to console will be updated)
-static const int64_t COIN_POS_NEW_REWARD = 0.50 * COIN; // 0.50  (output to console will be updated)
-static const int64_t COIN_POS_NEW_REWARD_02 = 0.25 * COIN; // 0.25  (output to console will be updated)
-
-
-
 struct BlockHasher
 {
     size_t operator()(const uint256& hash) const { return hash.GetCheapHash(); }
