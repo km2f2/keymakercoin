@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2022 The Keymaker Coin developers
+// Copyright (c) 2009-2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -954,7 +954,10 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
 
     // Check the header
     if (block.IsProofOfWork() && !CheckProofOfWork(&block, consensusParams))
+	{
+	LogPrintf("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
         return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
+	}
 
     return true;
 }
@@ -976,11 +979,11 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
 }
 // keymaker: it depends on current POW Block Height, not current blockchain Height
 int64_t GetProofOfWorkReward(unsigned int nHeight) {
-const Consensus::Params &params = Params().GetConsensus();
+    const Consensus::Params &params = Params().GetConsensus();
 
 
 
-        if (nHeight == 1) { return 6000000 * COIN; } // Premine
+   if (nHeight == 1) { return 6000000 * COIN; } // Premine
         else if (nHeight > 1 && nHeight <= 525600 )    {return 20 * COIN;}    
         else if (nHeight > 525600 && nHeight <= 1051200) {return 10 * COIN;}    
         else if (nHeight > 1051200 && nHeight <= 1576800) {return  5 * COIN;}
@@ -1015,71 +1018,56 @@ const Consensus::Params &params = Params().GetConsensus();
         else if (nHeight > 16293600 && nHeight <= 16819200) {return  0.00000001 * COIN;} 
         else {return  0.000000001;}  //2053 - 31 Years
 
-  
+
+
 }
-//CAmount GetProofOfStakeReward(int64_t nCoinAge, const CBlockIndex* pindex)
-//int64_t GetProofOfStakeReward(CAmount nCoinAge)
-CAmount GetProofOfStakeReward(CAmount nCoinAge, const CBlockIndex* pindex)
+//CAmount GetProofOfStakeReward(CAmount nCoinAge, const CBlockIndex* pindex)
+int64_t GetProofOfStakeReward(CAmount nCoinAge, const CBlockIndex* pindex)
 {
     int64_t nSubsidy = 0;
     int64_t nRewardCoinYear;
     unsigned int xHeight = pindex->nHeight;
- 
- 
- 
 
-// if (xHeight < 525600){
-//        nRewardCoinYear = 1 * COIN;  
-//        nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
-//    }
-//else if (xHeight > 525600 && xHeigh < 1051200 )
-//    {
-//        nRewardCoinYear = 0.9 * COIN;  
-//        nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
-//    }
-
- 
-  
-         if (xHeight <= 525600 )    { nRewardCoinYear = 1.1 * COIN;}    
-        else if (xHeight > 525600 && xHeight <= 1051200) { nRewardCoinYear = 0.9900 * COIN;}    
-        else if (xHeight > 1051200 && xHeight <= 1576800) { nRewardCoinYear = 0.8910 * COIN;}
-	    else if (xHeight > 1576800 && xHeight <= 2102400) { nRewardCoinYear = 0.8019 * COIN;}
-		else if (xHeight > 2102400 && xHeight <= 2628000) { nRewardCoinYear = 0.7217 * COIN;}
-		else if (xHeight > 2628000 && xHeight <= 3153600) { nRewardCoinYear = 0.6495 * COIN;}
-		else if (xHeight > 3153600 && xHeight <= 3679200) { nRewardCoinYear = 0.5846 * COIN;}
-        else if (xHeight > 3679200 && xHeight <= 4204800) { nRewardCoinYear = 0.5261 * COIN;}	
-	    else if (xHeight > 4204800 && xHeight <= 4730400) { nRewardCoinYear = 0.4735 * COIN;}
-		else if (xHeight > 4730400 && xHeight <= 5256000) { nRewardCoinYear = 0.4262 * COIN;}
-		else if (xHeight > 5256000 && xHeight <= 5781600) { nRewardCoinYear = 0.3835 * COIN;}
-		else if (xHeight > 5781600 && xHeight <= 6307200) { nRewardCoinYear = 0.3452 * COIN;}
-   		else if (xHeight > 6307200 && xHeight <= 6832800) { nRewardCoinYear = 0.3107 * COIN;}
-        else if (xHeight > 6832800 && xHeight <= 7358400) { nRewardCoinYear = 0.2796 * COIN;}
-        else if (xHeight > 7358400 && xHeight <= 7884000) { nRewardCoinYear = 0.2516 * COIN;}
-        else if (xHeight > 7884000 && xHeight <= 8409600) { nRewardCoinYear = 0.2265 * COIN;}
-        else if (xHeight > 8409600 && xHeight <= 8935200) { nRewardCoinYear = 0.2038 * COIN;}
-        else if (xHeight > 8935200 && xHeight <= 9460800) { nRewardCoinYear = 0.1834 * COIN;}
-        else if (xHeight > 9460800 && xHeight <= 9986400) { nRewardCoinYear = 0.1651 * COIN;}
-        else if (xHeight > 9986400 && xHeight <= 10512000) { nRewardCoinYear = 0.1486 * COIN;}
-        else if (xHeight > 10512000 && xHeight <= 11037600) { nRewardCoinYear = 0.1337 * COIN;}
-        else if (xHeight > 11037600 && xHeight <= 11563200) { nRewardCoinYear =  0.1204 * COIN;}
-        else if (xHeight > 11563200 && xHeight <= 12088800) { nRewardCoinYear =  0.1083 * COIN;}
-        else if (xHeight > 12088800 && xHeight <= 12614400) { nRewardCoinYear =  0.0975 * COIN;}
-        else if (xHeight > 12614400 && xHeight <= 13140000) { nRewardCoinYear = 0.0877 * COIN;}
-        else if (xHeight > 13140000 && xHeight <= 13665600) { nRewardCoinYear = 0.0790 * COIN;}
-        else if (xHeight > 13665600 && xHeight <= 14191200) { nRewardCoinYear = 0.0711 * COIN;}
-        else if (xHeight > 14191200 && xHeight <= 14716800) { nRewardCoinYear = 0.0640 * COIN;}
-        else if (xHeight > 14716800 && xHeight <= 15242400) { nRewardCoinYear = 0.0576 * COIN;}
-        else if (xHeight > 15242400 && xHeight <= 15768000) { nRewardCoinYear = 0.0518 * COIN;}
-        else if (xHeight > 15768000 && xHeight <= 16293600) { nRewardCoinYear = 0.0466 * COIN;} 
-        else if (xHeight > 16293600 && xHeight <= 16819200) { nRewardCoinYear = 0.0420 * COIN;} 
-        else {nRewardCoinYear =  0.375 * COIN;}  // 2054  
+     if (xHeight <= 525600 )    { nRewardCoinYear = 1.1 * COIN;}    
+        else if (xHeight > 525600 && xHeight <= 1051200) { nRewardCoinYear = 1 * COIN;}    
+        else if (xHeight > 1051200 && xHeight <= 1576800) { nRewardCoinYear =  0.9 * COIN;}
+	    else if (xHeight > 1576800 && xHeight <= 2102400) { nRewardCoinYear =  0.8 * COIN;}
+		else if (xHeight > 2102400 && xHeight <= 2628000) { nRewardCoinYear =  0.7 * COIN;}
+		else if (xHeight > 2628000 && xHeight <= 3153600) { nRewardCoinYear =  0.6 * COIN;}
+		else if (xHeight > 3153600 && xHeight <= 3679200) { nRewardCoinYear =  0.5 * COIN;}
+        else if (xHeight > 3679200 && xHeight <= 4204800) { nRewardCoinYear =  0.4 * COIN;}	
+	    else if (xHeight > 4204800 && xHeight <= 4730400) { nRewardCoinYear =  0.3 * COIN;}
+		else if (xHeight > 4730400 && xHeight <= 5256000) { nRewardCoinYear =  0.2 * COIN;}
+		else if (xHeight > 5256000 && xHeight <= 5781600) { nRewardCoinYear = 0.1 * COIN;}
+		else if (xHeight > 5781600 && xHeight <= 6307200) { nRewardCoinYear =  0.09 * COIN;}
+   		else if (xHeight > 6307200 && xHeight <= 6832800) { nRewardCoinYear = 0.08 * COIN;}
+        else if (xHeight > 6832800 && xHeight <= 7358400) { nRewardCoinYear = 0.07 * COIN;}
+        else if (xHeight > 7358400 && xHeight <= 7884000) { nRewardCoinYear =  0.06 * COIN;}
+        else if (xHeight > 7884000 && xHeight <= 8409600) { nRewardCoinYear =  0.05 * COIN;}
+        else if (xHeight > 8409600 && xHeight <= 8935200) { nRewardCoinYear =  0.04 * COIN;}
+        else if (xHeight > 8935200 && xHeight <= 9460800) { nRewardCoinYear = 0.03 * COIN;}
+        else if (xHeight > 9460800 && xHeight <= 9986400) { nRewardCoinYear =  0.02 * COIN;}
+        else if (xHeight > 9986400 && xHeight <= 10512000) { nRewardCoinYear = 0.01 * COIN;}
+        else if (xHeight > 10512000 && xHeight <= 11037600) { nRewardCoinYear =  0.009 * COIN;}
+        else if (xHeight > 11037600 && xHeight <= 11563200) { nRewardCoinYear =  0.008 * COIN;}
+        else if (xHeight > 11563200 && xHeight <= 12088800) { nRewardCoinYear =  0.007 * COIN;}
+        else if (xHeight > 12088800 && xHeight <= 12614400) { nRewardCoinYear =  0.006 * COIN;}
+        else if (xHeight > 12614400 && xHeight <= 13140000) { nRewardCoinYear =  0.005 * COIN;}
+        else if (xHeight > 13140000 && xHeight <= 13665600) { nRewardCoinYear = 0.004 * COIN;}
+        else if (xHeight > 13665600 && xHeight <= 14191200) { nRewardCoinYear = 0.003 * COIN;}
+        else if (xHeight > 14191200 && xHeight <= 14716800) { nRewardCoinYear = 0.002 * COIN;}
+        else if (xHeight > 14716800 && xHeight <= 15242400) { nRewardCoinYear =  0.001 * COIN;}
+        else if (xHeight > 15242400 && xHeight <= 15768000) { nRewardCoinYear = 0.0009 * COIN;}
+        else if (xHeight > 15768000 && xHeight <= 16293600) { nRewardCoinYear =  0.0008 * COIN;} 
+        else if (xHeight > 16293600 && xHeight <= 16819200) { nRewardCoinYear =  0.0007 * COIN;} 
+        else {nRewardCoinYear =  0.0005 * COIN;}  //2058 - 35 Yearsif (nRewardCoinYear > 0) {nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;}
 
 
 if (nRewardCoinYear > 0) {nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;}
 else {nSubsidy = 0;}
 
- 
- 
+
+
     if (gArgs.GetBoolArg("-printcreation", false))
         LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy), nCoinAge);
     return nSubsidy;
@@ -1142,7 +1130,7 @@ static void CheckForkWarningConditions()
     if (pindexBestForkTip && chainActive.Height() - pindexBestForkTip->nHeight >= 72)
         pindexBestForkTip = nullptr;
 
-    if (pindexBestForkTip || (pindexBestInvalid && pindexBestInvalid->nChainTrust > chainActive.Tip()->nChainTrust + (GetBlockTrust(*GetLastBlockIndex(chainActive.Tip(), true)) * 6)))
+    if (pindexBestForkTip || (pindexBestInvalid && pindexBestInvalid->nChainTrust > chainActive.Tip()->nChainTrust + (GetBlockProof(*GetLastBlockIndex(chainActive.Tip(), true)) * 6)))
     {
         if (!GetfLargeWorkForkFound() && pindexBestForkBase)
         {
@@ -1193,7 +1181,7 @@ static void CheckForkWarningConditionsOnNewFork(CBlockIndex* pindexNewForkTip)
     // We define it this way because it allows us to only store the highest fork tip (+ base) which meets
     // the 7-block condition and from this always have the most-likely-to-cause-warning fork
     if (pfork && (!pindexBestForkTip || pindexNewForkTip->nHeight > pindexBestForkTip->nHeight) &&
-        pindexNewForkTip->nChainTrust - pfork->nChainTrust > (GetBlockTrust(*pfork) * 7) &&
+        pindexNewForkTip->nChainTrust - pfork->nChainTrust > (GetBlockProof(*pfork) * 7) &&
         chainActive.Height() - pindexNewForkTip->nHeight < 72) {
         pindexBestForkTip = pindexNewForkTip;
         pindexBestForkBase = pfork;
@@ -1261,7 +1249,7 @@ int GetSpendHeight(const CCoinsViewCache &inputs) {
     CBlockIndex *pindexPrev = mapBlockIndex.find(inputs.GetBestBlock())->second;
     return pindexPrev->nHeight + 1;
 }
-  
+
 
 static CuckooCache::cache<uint256, SignatureCacheHasher> scriptExecutionCache;
 static uint256 scriptExecutionCacheNonce(GetRandHash());
@@ -1645,6 +1633,16 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex *pindex, const Consens
     }
 
     return flags;
+}
+
+// Check if GR Algo is activated at given point
+bool IsMinoEnabled(const CBlockIndex* pindexPrev, const Consensus::Params& params)
+{
+    if (pindexPrev != nullptr) {
+        return (pindexPrev->nTime > params.powForkTime);
+    } else {
+        return false;
+    }
 }
 
 
@@ -2063,8 +2061,22 @@ void static UpdateTip(const CBlockIndex *pindexNew, const CChainParams& chainPar
         // Check the version of the last 100 blocks to see if we need to upgrade:
         for (int i = 0; i < 100 && pindex != nullptr; i++)
         {
-            if (pindex->nVersion > CBlockHeader::CURRENT_VERSION)
-                ++nUpgraded;
+            //if (pindex->nVersion > CBlockHeader::CURRENT_VERSION)
+	    int32_t dGRVersion = 65537;//0x00010001; //fix
+	    int32_t dKEYVersion = 1;//0x00000001;
+	    int hGRVersion = 0x00010001; //fix
+	    int hKEYVersion = 0x00000001;
+            // GR: Mask out blocktype before checking for possible unknown upgrade
+            if (IsMinoEnabled(pindex, chainParams.GetConsensus())) {
+		int tVersion = pindex->nVersion;
+		//(pindex->nVersion  |= 1 << 25)
+
+		if ((pindex->nVersion || tVersion) != (dGRVersion || dKEYVersion || hGRVersion || hKEYVersion))
+		{
+			LogPrintf("Block Version: %s GR: %s CH: %s TEST: %s \n", pindex->nVersion, dGRVersion, dKEYVersion, tVersion);
+                	++nUpgraded;
+		}
+	    }
             pindex = pindex->pprev;
         }
         if (nUpgraded > 0)
@@ -2720,7 +2732,7 @@ CBlockIndex* CChainState::AddToBlockIndex(const CBlockHeader& block, bool fSetAs
     pindexNew->nTimeMax = (pindexNew->pprev ? std::max(pindexNew->pprev->nTimeMax, pindexNew->nTime) : pindexNew->nTime);
     if (fSetAsProofOfstake)
         pindexNew->SetProofOfStake();
-    pindexNew->nChainTrust = (pindexNew->pprev ? pindexNew->pprev->nChainTrust : 0) + GetBlockTrust(*pindexNew);
+    pindexNew->nChainTrust = (pindexNew->pprev ? pindexNew->pprev->nChainTrust : 0) + GetBlockProof(*pindexNew);
     pindexNew->RaiseValidity(BLOCK_VALID_TREE);
     if (pindexBestHeader == nullptr || pindexBestHeader->nChainTrust < pindexNew->nChainTrust)
         pindexBestHeader = pindexNew;
@@ -2861,6 +2873,7 @@ static bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, 
 
 static bool CheckBlockHeader(const CBlockHeader &block, CValidationState &state, const Consensus::Params &consensusParams, bool fCheckPOW = true, bool fOldClient = false) {
     // Check proof of work matches claimed amount
+
     if (fCheckPOW && !CheckProofOfWork(&block, consensusParams))
     {
         if (fOldClient)
@@ -3037,12 +3050,31 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, bool fProofOfS
     const int nHeight = pindexPrev->nHeight + 1;
 
     const Consensus::Params& consensusParams = params.GetConsensus();
+
+
+    // Check proof of work
+     // Handle pow type
+POW_TYPE powType = block.GetPoWType();
+        if (IsMinoEnabled(pindexPrev, consensusParams) && !fProofOfStake) {
+            if (powType >= NUM_BLOCK_TYPES)
+                return state.DoS(100, false, REJECT_INVALID, "bad-algo-id", false, "unrecognised pow type in block version");
+
+            //if (block.nBits != GetNextTargetRequired(pindexPrev, &block, consensusParams, powType))
+	    if (block.nBits != GetNextTargetRequired(pindexPrev, false, consensusParams, powType))
+                return state.DoS(100, false, REJECT_INVALID, "bad-diff", false, "incorrect pow difficulty");
+
+    } else if (block.nBits != GetNextTargetRequired(pindexPrev, fProofOfStake, consensusParams, powType)) {
+		//if (block.nTime > consensusParams.isValid)
+		if (!IsInitialBlockDownload())
+	        	return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, "incorrect proof of work");
+    	}
+
     //check block time (start)
     if (GetTime() < consensusParams.nStartMiningTime) {
         return state.Invalid(false, REJECT_INVALID, "time-too-new", "it's not good time to start mining");
     }
     // Check proof of work or proof-of-stake
-    if (block.nBits != GetNextTargetRequired(pindexPrev, fProofOfStake, consensusParams))
+    if (block.nBits != GetNextTargetRequired(pindexPrev, fProofOfStake, consensusParams, powType))
         return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, "incorrect proof of work/proof-of-stake");
 
     // Check against checkpoints
@@ -3069,6 +3101,19 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, bool fProofOfS
     // Check timestamp
     if (block.GetBlockTime() > nAdjustedTime + MAX_FUTURE_BLOCK_TIME)
         return state.Invalid(false, REJECT_INVALID, "time-too-new", "block timestamp too far in the future");
+
+    // Crow: Handle nVersion differently after activation
+    if (IsMinoEnabled(pindexPrev,consensusParams)) {
+        // TODO: Fix version bit checking 
+        // // Top 8 bits must be zero
+        // if (block.nVersion & 0xFF000000)
+        //     return state.Invalid(false, REJECT_OBSOLETE, strprintf("old-versionbits(0x%08x)", block.nVersion), strprintf("rejected nVersion=0x%08x block (old versionbits)", block.nVersion));
+
+        // Blocktype must be valid
+        uint8_t blockType = (block.nVersion >> 16) & 0xFF;
+        if (blockType >= NUM_BLOCK_TYPES)
+            return state.Invalid(false, REJECT_INVALID, "bad-blocktype", strprintf("unrecognised blocktype of =0x%08x", blockType));
+    }
 
     return true;
 }
@@ -3180,6 +3225,9 @@ bool CChainState::AcceptBlockHeader(const CBlockHeader& block, bool fProofOfStak
     bool fSetAsPos = fProofOfStake;
     if (hash != chainparams.GetConsensus().hashGenesisBlock) {
 
+	//uint256 ghash = chainparams.GetConsensus().hashGenesisBlock;
+	//LogPrint(BCLog::ALL, "---Hash: %s Genesis: %s \n", hash.ToString(), ghash.ToString());
+
         if (miSelf != mapBlockIndex.end()) {
             // Block header is already known.
             pindex = miSelf->second;
@@ -3192,7 +3240,7 @@ bool CChainState::AcceptBlockHeader(const CBlockHeader& block, bool fProofOfStak
 
         // keymaker: Don't reject in case of old clients. Change our assumption instead.
         //ppcTODO: Maybe add restrictions until when this is allowed? We don't want new clients to pretend to be old clients and try to abuse this.
-        if (!CheckBlockHeader(block, state, chainparams.GetConsensus(), !fProofOfStake, fOldClient))
+        if (!IsInitialBlockDownload() && !CheckBlockHeader(block, state, chainparams.GetConsensus(), !fProofOfStake, fOldClient))
         {
             if (fOldClient)
                 fSetAsPos = !fProofOfStake; // our guess was wrong - correct it
@@ -3212,7 +3260,7 @@ bool CChainState::AcceptBlockHeader(const CBlockHeader& block, bool fProofOfStak
         if (pindexPrev->nStatus & BLOCK_FAILED_MASK)
             return state.DoS(100, error("%s: prev block invalid", __func__), REJECT_INVALID, "bad-prevblk");
         if (!ContextualCheckBlockHeader(block, fSetAsPos, state, chainparams, pindexPrev, GetAdjustedTime()))
-            return error("%s: Consensus::ContextualCheckBlockHeader: %s, %s", __func__, hash.ToString(), FormatStateMessage(state));
+            return error("%s: Consensus::ContextualCheckBlockHeader: %s, %s, PoS: %s", __func__, hash.ToString(), FormatStateMessage(state), fSetAsPos);
 
         if (!pindexPrev->IsValid(BLOCK_VALID_SCRIPTS)) {
             for (const CBlockIndex* failedit : g_failed_blocks) {
@@ -3568,7 +3616,7 @@ bool CChainState::LoadBlockIndex(const Consensus::Params& consensus_params, CBlo
     for (const std::pair<int, CBlockIndex *> &item : vSortedByHeight)
     {
         CBlockIndex *pindex = item.second;
-        pindex->nChainTrust = (pindex->pprev ? pindex->pprev->nChainTrust : 0) + GetBlockTrust(*pindex);
+        pindex->nChainTrust = (pindex->pprev ? pindex->pprev->nChainTrust : 0) + GetBlockProof(*pindex);
         pindex->nTimeMax = (pindex->pprev ? std::max(pindex->pprev->nTimeMax, pindex->nTime) : pindex->nTime);
         // We can link the chain of blocks for which we've received transactions at some point.
         // Pruned nodes may have deleted the block.

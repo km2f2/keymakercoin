@@ -1,5 +1,5 @@
 	// Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2022 The Keymaker Coin developers
+// Copyright (c) 2009-2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +27,6 @@
  *   (no blocks before with a timestamp after, none after with
  *    timestamp before)
  * + Contains no strange transactions
- *  
  */
 
 class CMainParams : public CChainParams {
@@ -37,7 +36,7 @@ public:
         consensus.BIP16Height = 0;
         consensus.BIP34Height = 0;
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-      
+
 
         consensus.nTargetTimespan = 48 * 60 * 60;  //48 hours between retarget
         consensus.nStakeTargetSpacing = 1 * 60;  //60 Sec
@@ -48,6 +47,12 @@ public:
         consensus.nDgwPastBlocks = 30;
 
         consensus.nStartMiningTime = 1667184351;
+	    consensus.nPowTargetSpacingCH = 187.5; //460.8 blocks 40%
+	    consensus.nPowTargetSpacingGR = 125; //691.2 blocks 60%
+
+	    consensus.powForkTime = 1672552800;  // Jan 1 2023
+        consensus.powTypeLimits.emplace_back(uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));   // curvehash limit
+        consensus.powTypeLimits.emplace_back(uint256S("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));   // Minox limit
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -56,10 +61,9 @@ public:
         //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000094383e20cb8020ce6");
 
 
-        consensus.hashGenesisBlock = genesis.GetHash();
+
 
         // By default assume that the signatures in ancestors of this block are valid.
-        //consensus.defaultAssumeValid = uint256S("0x0");
         consensus.defaultAssumeValid = uint256S("0x9f67f1835170e36cb4ec265db7d42542743bba39d9f0cc7f0bb73a7b900860f7");
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -75,17 +79,12 @@ public:
         nDefaultPort = 12421;
 
         genesis = CreateGenesisBlock(1667184351, 500002008, 0x1f00ffff, 1, 0);
-
+	
         consensus.hashGenesisBlock = genesis.GetHash();
 
         assert(consensus.hashGenesisBlock == uint256S("0x9f67f1835170e36cb4ec265db7d42542743bba39d9f0cc7f0bb73a7b900860f7"));
         assert(genesis.hashMerkleRoot == uint256S("0xed8f603c29caa485d2f1f6d631ef86132104a667a6a58544d36cb99c2ef0a51e"));
-   
-      //  vFixedSeeds.clear();
-      //   vSeeds.clear();
-
         vSeeds.emplace_back("seeder.keymaker.cc");
-        //vSeeds.emplace_back("seeder2.keymaker.cc");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,46);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,73);
@@ -104,7 +103,7 @@ public:
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
 
-        checkpointData = {
+checkpointData = {
             {
                 {0, uint256S("0x9f67f1835170e36cb4ec265db7d42542743bba39d9f0cc7f0bb73a7b900860f7")},
             }
@@ -129,20 +128,28 @@ public:
         consensus.BIP16Height = 0;
         consensus.BIP34Height = 0;
         consensus.powLimit = uint256S("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-       // consensus.nSubsidyHalvingInterval = 400000;
 
         consensus.nTargetTimespan = 24 * 60;  // 24 minutes
         consensus.nStakeTargetSpacing = 1 * 60;  // 1-minute block spacing
         consensus.nTargetSpacingWorkMax = 1 * consensus.nStakeTargetSpacing; // 24-minute
-        consensus.nPowTargetSpacing = consensus.nStakeTargetSpacing;
+	    consensus.nPowTargetSpacing = consensus.nStakeTargetSpacing;
         consensus.nStakeMinConfirmations = 1;
         consensus.nCoinbaseMaturity = 6; // 6 confirmations
         consensus.nDgwPastBlocks = 30;
 
+	    consensus.nPowTargetSpacingCH = 187.5; //460.8 blocks 40%
+	    consensus.nPowTargetSpacingGR = 125; //691.2 blocks 60%
+
+	   consensus.powForkTime = 9605440641; //
+
+	   //consensus.isValid = 1666327253;
+
+        consensus.powTypeLimits.emplace_back(uint256S("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));   // curvehash limit
+        consensus.powTypeLimits.emplace_back(uint256S("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));   // Minox limit
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nStartMiningTime = 1605440641;
+	    consensus.nStartMiningTime = 1605440641;
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x00");
@@ -161,6 +168,11 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0xab3a9cb18a0e7103e8d087ce5cdb92526b93532f2f1904c21f8ae8a8e9288e8e"));
         assert(genesis.hashMerkleRoot == uint256S("0x6de80f3e1ed227ac5028ce6335c5f6096b7015dd013df7fd7781b98f1cfcd09d"));
+
+        vFixedSeeds.clear();
+        vSeeds.clear();
+
+        // nodes with support for servicebits filtering should be at the top
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -209,8 +221,6 @@ public:
         consensus.BIP34Height = 0; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests)
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 28;
-        //consensus.nSubsidyHalvingInterval = 400000;
-        
         consensus.nTargetTimespan = 3 * 24 * 60 * 60; // two weeks
         consensus.nStakeTargetSpacing = 1 * 60; // 1-minute block spacing
         consensus.nTargetSpacingWorkMax = 1 * consensus.nStakeTargetSpacing; //
@@ -256,7 +266,6 @@ public:
             0,
             0
         };
-
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,50);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,156);

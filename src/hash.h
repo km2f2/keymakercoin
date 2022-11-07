@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2022 The Keymaker Coin developers
+// Copyright (c) 2009-2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +11,11 @@
 #include <prevector.h>
 #include <uint256.h>
 #include <version.h>
-#include <primitives/block.h>
+#include <primitives/block.h> //?
+
+//extern "C" {
+//#include "algo/sph_sha2.h"
+//}//?
 
 #include <vector>
 
@@ -231,5 +235,8 @@ uint64_t SipHashUint256Extra(uint64_t k0, uint64_t k1, const uint256& val, uint3
 
 extern int32_t keymakerRandseed;
 int univHash(const uint256 &x);
+
+extern double algoHashTotal[16];
+extern int algoHashHits[16];
 
 #endif // BITCOIN_HASH_H

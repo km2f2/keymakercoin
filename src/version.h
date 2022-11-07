@@ -43,4 +43,7 @@ static const int SHORT_IDS_BLOCKS_VERSION = 80011;
 //! not banning for invalid compact blocks starts with this version
 static const int INVALID_CB_NO_BAN_VERSION = 80011;
 
+//MINO ADDED
+static const int MINOTAURX_VERSION = 80014;
+
 #endif // BITCOIN_VERSION_H

@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2022 The Keymaker Coin developers
+// Copyright (c) 2009-2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -42,12 +42,21 @@ std::atomic<bool> fStopMinerProc(false);
 std::atomic<bool> fTryToSync(false);
 std::atomic<bool> fIsStaking(false);
 
-int64_t UpdateTime(CBlockHeader *pblock) {
+int64_t UpdateTime(CBlockHeader *pblock, const Consensus::Params& Params, const CBlockIndex* pindexPrev, const POW_TYPE powType) {
+
     int64_t nOldTime = pblock->nTime;
     int64_t nNewTime = std::max(pblock->GetBlockTime(), GetAdjustedTime());
 
     if (nOldTime < nNewTime)
         pblock->nTime = nNewTime;
+
+    if (IsMinoEnabled(pindexPrev, Params)) {
+         if (Params.fPowAllowMinDifficultyBlocks)
+            pblock->nBits = GetNextTargetRequired(pindexPrev, pblock, Params, powType);
+    } else {
+        if (Params.fPowAllowMinDifficultyBlocks)
+            pblock->nBits = GetNextTargetRequired(pindexPrev, pblock, Params, powType);
+    }
 
     return nNewTime - nOldTime;
 }
@@ -85,7 +94,7 @@ void BlockAssembler::resetBlock() {
 }
 
 // keymaker: if pwallet != NULL it will attempt to create coinstake
-std::unique_ptr <CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &scriptPubKeyIn, bool fMineWitnessTx, CWallet *pwallet, bool *pfPoSCancel) {
+std::unique_ptr <CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &scriptPubKeyIn, bool fMineWitnessTx, CWallet *pwallet, bool *pfPoSCancel, const POW_TYPE powType) {
     int64_t nTimeStart = GetTimeMicros();
 
     resetBlock();
@@ -102,6 +111,17 @@ std::unique_ptr <CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &s
     nHeight = pindexPrev->nHeight + 1;
     unsigned int nPOWBlockHeight = pindexPrev->nPOWBlockHeight + 1;
 
+    // Refuse to attempt to create a non-curvehsh block before activation
+    if (!IsMinoEnabled(pindexPrev, chainparams.GetConsensus()) && powType != 0)
+        throw std::runtime_error("Error: Won't attempt to create a non-curvehash block before minotaurx activation");
+
+    // If GR Algo is enabled, encode desired pow type.
+    if (IsMinoEnabled(pindexPrev, chainparams.GetConsensus())) {
+        if (powType >= NUM_BLOCK_TYPES)
+            throw std::runtime_error("Error: Unrecognised pow type requested");
+        pblock->nVersion |= powType << 16;
+    }
+
     // Create coinbase transaction.
     CMutableTransaction coinbaseTx;
     coinbaseTx.vin.resize(1);
@@ -110,7 +130,7 @@ std::unique_ptr <CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &s
     coinbaseTx.vout[0].scriptPubKey = scriptPubKeyIn;
 
     if (pblock->IsProofOfWork()) {
-        pblock->nBits = GetNextTargetRequired(pindexPrev, false, chainparams.GetConsensus());
+        pblock->nBits = GetNextTargetRequired(pindexPrev, false, chainparams.GetConsensus(), powType);
         CAmount blockValue = GetProofOfWorkReward(nPOWBlockHeight);
         coinbaseTx.vout[0].nValue = blockValue;
     }
@@ -126,7 +146,7 @@ std::unique_ptr <CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &s
     if (pwallet)  // attemp to find a coinstake
     {
         *pfPoSCancel = true;
-        pblock->nBits = GetNextTargetRequired(pindexPrev, true, chainparams.GetConsensus());
+        pblock->nBits = GetNextTargetRequired(pindexPrev, true, chainparams.GetConsensus(), powType);
         CMutableTransaction txCoinStake;
         int64_t nSearchTime = txCoinStake.nTime; // search to current time
         if (nSearchTime > nLastCoinStakeSearchTime)
@@ -191,10 +211,26 @@ std::unique_ptr <CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &s
     pblock->hashPrevBlock = pindexPrev->GetBlockHash();
     if (pblock->IsProofOfStake())
         pblock->nTime = pblock->vtx[1]->nTime; //same as coinstake timestamp
+//LogPrintf("1");
     pblock->nTime = std::max(pindexPrev->GetMedianTimePast() + 1, pblock->GetMaxTransactionTime());
     pblock->nTime = std::max(pblock->GetBlockTime(), pindexPrev->GetBlockTime() - MAX_FUTURE_BLOCK_TIME);
+//LogPrintf("2");
     if (pblock->IsProofOfWork())
-        UpdateTime(pblock);
+    {
+//LogPrintf("3");
+        UpdateTime(pblock, chainparams.GetConsensus(), pindexPrev, powType);
+//LogPrintf("4");
+	if (IsMinoEnabled(pindexPrev, chainparams.GetConsensus())) {
+//LogPrintf("4a powType: %s\n", powType);
+		//pblock->nBits = GetNextTargetRequired(pindexPrev, pblock, chainparams.GetConsensus(), powType);
+		pblock->nBits = GetNextTargetRequired(pindexPrev, false, chainparams.GetConsensus(), powType);
+	} else {
+//LogPrintf("4b");
+		//pblock->nBits = GetNextTargetRequired(pindexPrev, pblock, chainparams.GetConsensus(), powType);
+		pblock->nBits = GetNextTargetRequired(pindexPrev, false, chainparams.GetConsensus(), powType);
+	}
+    }
+//LogPrintf("5");
     pblock->nNonce = 0;
     pblocktemplate->vTxSigOpsCost[0] = WITNESS_SCALE_FACTOR * GetLegacySigOpCount(*pblock->vtx[0]);
 
@@ -202,8 +238,9 @@ std::unique_ptr <CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &s
     if (pwallet && !TestBlockValidity(state, chainparams, *pblock, pindexPrev, false, false)) {
         throw std::runtime_error(strprintf("%s: TestBlockValidity failed: %s", __func__, FormatStateMessage(state)));
     }
+//LogPrintf("6");
     int64_t nTime2 = GetTimeMicros();
-
+//LogPrintf("7");
     LogPrint(BCLog::BENCH, "CreateNewBlock() packages: %.2fms (%d packages, %d updated descendants), validity: %.2fms (total %.2fms)\n", 0.001 * (nTime1 - nTimeStart), nPackagesSelected,
              nDescendantsUpdated, 0.001 * (nTime2 - nTime1), 0.001 * (nTime2 - nTimeStart));
 
@@ -498,7 +535,7 @@ void PoSMiner(CWallet *pwallet) {
     {
         std::vector <COutput> vCoins;
         pwallet->AvailableCoins(vCoins, false);
-        pos_timio = gArgs.GetArg("-staketimio", 500) + 30 * sqrt(vCoins.size());
+        pos_timio = gArgs.GetArg("-staketimio", 500) + 6 * sqrt(vCoins.size());
         LogPrintf("Set proof-of-stake timeout: %ums for %u UTXOs\n", pos_timio, vCoins.size());
     }
 
@@ -542,12 +579,14 @@ void PoSMiner(CWallet *pwallet) {
 
             strMintWarning = strMintEmpty;
 
+	    //ADDED
+
             //
             // Create new block
             //
             CBlockIndex *pindexPrev = chainActive.Tip();
             bool fPoSCancel = false;
-            std::unique_ptr <CBlockTemplate> pblocktemplate(BlockAssembler(Params()).CreateNewBlock(coinbaseScript->reserveScript, true, pwallet, &fPoSCancel));
+            std::unique_ptr <CBlockTemplate> pblocktemplate(BlockAssembler(Params()).CreateNewBlock(coinbaseScript->reserveScript, true, pwallet, &fPoSCancel, POW_TYPE_CURVEHASH));
             if (!pblocktemplate.get()) {
                 if (fPoSCancel == true) {
                     MilliSleep(pos_timio);
@@ -567,11 +606,6 @@ void PoSMiner(CWallet *pwallet) {
                     LogPrintf("PoSMiner(): failed to sign PoS block");
                     continue;
                 }
-                LogPrintf("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n");
-                LogPrintf("██ ▄▄ ██ ▄▄▄ ██ ▄▄▄ ████ ▄▄▀██ █████ ▄▄▄ ██ ▄▄▀██ █▀▄██\n");
-                LogPrintf("██ ▀▀ ██ ███ ██▄▄▄▀▀████ ▄▄▀██ █████ ███ ██ █████ ▄▀███\n");
-                LogPrintf("██ █████ ▀▀▀ ██ ▀▀▀ ████ ▀▀ ██ ▀▀ ██ ▀▀▀ ██ ▀▀▄██ ██ ██\n");
-                LogPrintf("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n");
                 LogPrintf("PoSMiner : proof-of-stake block found %s\n", pblock->GetHash().ToString());
                 ProcessBlockFound(pblock, Params());
                 // Rest for ~2 minutes after successful block to preserve close quick
@@ -645,7 +679,8 @@ bool static ScanHash(const CBlockHeader *pblock, uint32_t &nNonce, uint256 *phas
     }
 }
 
-void static KeymakerMiner(const CChainParams &chainparams, void *parg) {
+//void static KeymakerMiner(const CChainParams &chainparams, void *parg) {
+void static KeymakerMiner(const CChainParams &chainparams, void *parg, const POW_TYPE powType) {
     LogPrintf("KeymakerMiner started\n");
     RenameThread("keymaker-miner");
     CWallet *pwallet = (CWallet *) parg;
@@ -692,7 +727,7 @@ void static KeymakerMiner(const CChainParams &chainparams, void *parg) {
               //  break;
           //  }
 
-            std::unique_ptr <CBlockTemplate> pblocktemplate(BlockAssembler(Params()).CreateNewBlock(coinbaseScript->reserveScript, true, nullptr, nullptr));
+            std::unique_ptr <CBlockTemplate> pblocktemplate(BlockAssembler(Params()).CreateNewBlock(coinbaseScript->reserveScript, true, nullptr, nullptr, powType));
             if (!pblocktemplate.get()) {
                 LogPrintf("Error in KeymakerMiner: Keypool ran out, please call keypoolrefill before restarting the mining hread\n");
                 return;
@@ -700,8 +735,11 @@ void static KeymakerMiner(const CChainParams &chainparams, void *parg) {
             CBlock *pblock = &pblocktemplate->block;
             IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
+            //LogPrintf(" with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+            //          ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
+
             LogPrintf("Running KeymakerMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
-                      ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
+                      ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));          
 
             //
             // Search
@@ -715,6 +753,7 @@ void static KeymakerMiner(const CChainParams &chainparams, void *parg) {
                     if (UintToArith256(hash) <= hashTarget) {
                         // Found a solution
                         pblock->nNonce = nNonce;
+			//hash = pblock->ComputePoWHash();
                         GetPoWHash(pblock, &hash);
 //                        GetPoWHash();
 
@@ -724,14 +763,11 @@ void static KeymakerMiner(const CChainParams &chainparams, void *parg) {
                             continue;
                         }
  
- 
                         LogPrintf("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n"); 
                         LogPrintf("██ ▄▄ ██ ▄▄▄ ██ ███ ████ ▄▄▀██ █████ ▄▄▄ ██ ▄▄▀██ █▀▄██\n"); 
                         LogPrintf("██ ▀▀ ██ ███ ██ █ █ ████ ▄▄▀██ █████ ███ ██ █████ ▄▀███ \n"); 
                         LogPrintf("██ █████ ▀▀▀ ██▄▀▄▀▄████ ▀▀ ██ ▀▀ ██ ▀▀▀ ██ ▀▀▄██ ██ ██ \n"); 
                         LogPrintf("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ \n"); 
-                   
-
                         LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
                         ProcessBlockFound(pblock, chainparams);
                         LogPrintf("Done:\n");
@@ -757,7 +793,8 @@ void static KeymakerMiner(const CChainParams &chainparams, void *parg) {
                 if (pindexPrev != chainActive.Tip())
                     break;
                 // Update nTime every few seconds
-                if (UpdateTime(pblock) < 0)
+                //if (UpdateTime(pblock, powType) < 0)
+		if(UpdateTime(pblock, chainparams.GetConsensus(), pindexPrev, powType) < 0)
                     break; // Recreate the block if the clock has run backwards,
                 // so that we can use the correct time.
                 if (chainparams.GetConsensus().fPowAllowMinDifficultyBlocks) {
@@ -794,8 +831,26 @@ void GenerateKeymaker(bool fGenerate, int nThreads, const CChainParams &chainpar
         return;
 
     minerThreads = new boost::thread_group();
+
+
+    std::string strAlgo = gArgs.GetArg("-powalgo", DEFAULT_POW_TYPE);
+
+    bool algoFound = false;
+    POW_TYPE powType;
+    for (unsigned int i = 0; i < NUM_BLOCK_TYPES; i++) {
+        if (strAlgo == POW_TYPE_NAMES[i]) {
+            powType = (POW_TYPE)i;
+            algoFound = true;
+            break;
+        }
+    }
+    if (!algoFound)
+        LogPrintf("KeymakerMiner -- Invalid pow algorithm requested");
+
+
+
     if (!vpwallets.empty()) {
         for (int i = 0; i < nThreads; i++)
-            minerThreads->create_thread(boost::bind(&KeymakerMiner, boost::cref(chainparams), vpwallets[0]));
+            minerThreads->create_thread(boost::bind(&KeymakerMiner, boost::cref(chainparams), vpwallets[0], powType));
     }
 }
