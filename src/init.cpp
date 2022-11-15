@@ -505,14 +505,14 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/KeymakerCoin/Keymaker-Coin-Cryptocurrency>";
-    const std::string URL_WEBSITE = "<https://keymakercoin.org>";
-    const std::string URL_EXPLORER = "<https://explorer.keymakercoin.org>";
-    //const std::string URL_OFFICIALPOOL = "";
-    const std::string URL_WALLETS = "<https://github.com/KeymakerCoin/Keymaker-Coin-Cryptocurrency/releases/latest>";
-    const std::string URL_DISCORD = "<https://discord.gg/tPfB7REgNe>";
-    const std::string URL_TWITTER = "<https://twitter.com/KeymakerCoin>";
-    const std::string URL_INSTAGRAM = "<https://www.instagram.com/keymaker_coin/>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/KeymakerCoin/KeymakerCoin>";
+    const std::string URL_WEBSITE = "<https://keymaker.cc>";
+    const std::string URL_EXPLORER = "<https://explorer.keymaker.cc>";
+    const std::string URL_OFFICIALPOOL = "<https://pool.keymaker.cc/>";
+    const std::string URL_WALLETS = "<https://github.com/keymakercoin/keymakercoin/releases>";
+    const std::string URL_DISCORD = "<https://discord.gg/bEZ5BtQUKB>";
+    const std::string URL_TWITTER = "<https://twitter.com/keymakercc>";
+ //   const std::string URL_INSTAGRAM = "<https://www.instagram.com/keymaker_coin/>";
 
 
 //    return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2022, COPYRIGHT_YEAR) + " ") + "\n" +
