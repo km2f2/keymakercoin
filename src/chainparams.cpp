@@ -140,7 +140,7 @@ public:
 	    consensus.nPowTargetSpacingCH = 187.5; //460.8 blocks 40%
 	    consensus.nPowTargetSpacingGR = 125; //691.2 blocks 60%
 
-	   consensus.powForkTime = 1669960250; //
+	   consensus.powForkTime = 1670097600; //
 
 	   //consensus.isValid = 1666327253;
 
