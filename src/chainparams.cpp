@@ -50,7 +50,7 @@ public:
 	    consensus.nPowTargetSpacingCH = 187.5; //460.8 blocks 40%
 	    consensus.nPowTargetSpacingGR = 125; //691.2 blocks 60%
 
-	    consensus.powForkTime = 1672552800;  // Jan 3 2023
+	    consensus.powForkTime = 1670094000;  // Sat Dec 03 2022 19:00:00 GMT+0000    Sat Dec 03 2022 13:00:00 GMT-0600 (Central Standard Time)
         consensus.powTypeLimits.emplace_back(uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));   // curvehash limit
         consensus.powTypeLimits.emplace_back(uint256S("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));   // Minox limit
 
