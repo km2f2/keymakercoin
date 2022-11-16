@@ -2,7 +2,7 @@
 #git clone https://github.com/keymakercoin/keymakercoin.git
 #cd keymakercoin
 
-# 
+ 
 sudo apt-get update -y
 sudo apt-get install git build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 -y
 sudo apt-get install  ccache libboost-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y
