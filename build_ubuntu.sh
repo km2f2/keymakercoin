@@ -1,6 +1,6 @@
 #Clone Repo
-#git clone https://github.com/keymakercoin/keymakercoin.git
-#cd keymakercoin
+git clone https://github.com/keymakercoin/keymakercoin.git
+cd keymakercoin
 
  
 sudo apt-get update -y
@@ -20,12 +20,14 @@ sudo apt-get install libdb4.8-dev libdb4.8++-dev libevent-dev libzmq3-dev -y
 sudo apt-get install libminiupnpc-dev -y
 
 
-# To compile wallet
-./contrib/install_db4.sh `pwd`
+
 
 #ZMQ
 sudo apt-get install libzmq3-dev -y
 
+
+# To compile wallet
+./contrib/install_db4.sh `pwd`
 
 #QT
 
