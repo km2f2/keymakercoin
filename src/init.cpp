@@ -793,11 +793,14 @@ void InitLogging()
 #else
     version_string += " (release build)";
 #endif
-   //LogPrintf("░█▄▀▒██▀░▀▄▀░█▄▒▄█▒▄▀▄░█▄▀▒██▀▒█▀▄ \n");
-   //LogPrintf("░█▒█░█▄▄░▒█▒░█▒▀▒█░█▀█░█▒█░█▄▄░█▀▄ \n");
-   //LogPrintf(PACKAGE_NAME " version %s\n", version_string);
-   //LogPrintf("\n\n\n\n\n\n\n\n\n");
-   //MilliSleep(5*1000); 
+   LogPrintf("K  K EEEE Y   Y M   M  AA  K  K EEEE RRRR\n");
+   LogPrintf("K K  E     Y Y  MM MM A  A K K  E    R   R \n");
+   LogPrintf("KK   EEE    Y   M M M AAAA KK   EEE  RRRR \n");
+   LogPrintf("K K  E      Y   M   M A  A K K  E    R R  \n");
+   LogPrintf("K  K EEEE   Y   M   M A  A K  K EEEE R  RR\n");  
+   LogPrintf(PACKAGE_NAME " version %s\n", version_string);
+   LogPrintf("\n\n\n\n\n\n\n\n\n");
+   MilliSleep(5*1000); 
  
 }
 
