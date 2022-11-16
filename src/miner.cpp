@@ -763,11 +763,11 @@ void static KeymakerMiner(const CChainParams &chainparams, void *parg, const POW
                             continue;
                         }
  
-                        LogPrintf("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n"); 
-                        LogPrintf("██ ▄▄ ██ ▄▄▄ ██ ███ ████ ▄▄▀██ █████ ▄▄▄ ██ ▄▄▀██ █▀▄██\n"); 
-                        LogPrintf("██ ▀▀ ██ ███ ██ █ █ ████ ▄▄▀██ █████ ███ ██ █████ ▄▀███ \n"); 
-                        LogPrintf("██ █████ ▀▀▀ ██▄▀▄▀▄████ ▀▀ ██ ▀▀ ██ ▀▀▀ ██ ▀▀▄██ ██ ██ \n"); 
-                        LogPrintf("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ \n"); 
+                        //LogPrintf("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n"); 
+                        //LogPrintf("██ ▄▄ ██ ▄▄▄ ██ ███ ████ ▄▄▀██ █████ ▄▄▄ ██ ▄▄▀██ █▀▄██\n"); 
+                        //LogPrintf("██ ▀▀ ██ ███ ██ █ █ ████ ▄▄▀██ █████ ███ ██ █████ ▄▀███ \n"); 
+                        //LogPrintf("██ █████ ▀▀▀ ██▄▀▄▀▄████ ▀▀ ██ ▀▀ ██ ▀▀▀ ██ ▀▀▄██ ██ ██ \n"); 
+                        //LogPrintf("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ \n"); 
                         LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
                         ProcessBlockFound(pblock, chainparams);
                         LogPrintf("Done:\n");
