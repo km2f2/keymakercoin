@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2022 The Keymaker Coin developers
+// Copyright (c) 2009-2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -498,12 +498,14 @@ std::string HelpMessage(HelpMessageMode mode)
         strUsage += HelpMessageOpt("-rpcworkqueue=<n>", strprintf("Set the depth of the work queue to service RPC calls (default: %d)", DEFAULT_HTTP_WORKQUEUE));
         strUsage += HelpMessageOpt("-rpcservertimeout=<n>", strprintf("Timeout during HTTP requests (default: %d)", DEFAULT_HTTP_SERVER_TIMEOUT));
     }
+
+    strUsage += HelpMessageOpt("-powalgo=curvehash|minotaurx", strprintf(_("Default pow mining algorithm. Miners who can't easily adjust their getblocktemplate calls should use this argument to set their preferred mining algorithm. (default: %s)"), DEFAULT_POW_TYPE));
     return strUsage;
 }
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/KeymakerCoin/Keymaker-Coin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/KeymakerCoin/KeymakerCoin>";
     const std::string URL_WEBSITE = "<https://keymaker.cc>";
     const std::string URL_EXPLORER = "<https://explorer.keymaker.cc>";
     const std::string URL_OFFICIALPOOL = "<https://pool.keymaker.cc/>";
@@ -524,10 +526,10 @@ std::string LicenseInfo()
                URL_EXPLORER) +
            "\n" +
            _("--------------------------------------------") + "\n" +
-           strprintf(_("Official Pool: %s"), + "\n" +
-               URL_OFFICIALPOOL) +
-           "\n" +
-           _("--------------------------------------------") + "\n" +
+           //strprintf(_("Official Pool: %s"), + "\n" +
+           //    URL_OFFICIALPOOL) +
+           //"\n" +
+           //_("--------------------------------------------") + "\n" +
            strprintf(_("Source code: %s"), + "\n" +
                URL_SOURCE_CODE) +
            "\n" +
@@ -535,7 +537,7 @@ std::string LicenseInfo()
            strprintf(_("Wallets: %s"), + "\n" +
                URL_WALLETS) +
            "\n" +
-          _("--------------------------------------------") + "\n" +
+           _("--------------------------------------------") + "\n" +
            strprintf(_("Discord: %s"), + "\n" +
                URL_DISCORD) +
            "\n" +
@@ -543,9 +545,9 @@ std::string LicenseInfo()
            strprintf(_("Twitter: %s"), + "\n" +
                URL_TWITTER) +
            "\n" +
-   //        _("--------------------------------------------") + "\n" +
-   //        strprintf(_("Instagram: %s"), + "\n" +
-   //            URL_INSTAGRAM) +
+           _("--------------------------------------------") + "\n" +
+           strprintf(_("Instagram: %s"), + "\n" +
+               URL_INSTAGRAM) +
            "\n" +
            _("----------------------------------------------------------------------------------------") + "\n" +
            "\n" +
@@ -784,21 +786,19 @@ void InitLogging()
     fLogTimeMicros = gArgs.GetBoolArg("-logtimemicros", DEFAULT_LOGTIMEMICROS);
     fLogIPs = gArgs.GetBoolArg("-logips", DEFAULT_LOGIPS);
 
-   // LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    //LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     std::string version_string = FormatFullVersion();
 #ifdef DEBUG
     version_string += " (debug build)";
 #else
     version_string += " (release build)";
 #endif
-   
-    //LogPrintf("░█▄▀▒██▀░▀▄▀░█▄▒▄█▒▄▀▄░█▄▀▒██▀▒█▀▄ \n");
-    //LogPrintf("░█▒█░█▄▄░▒█▒░█▒▀▒█░█▀█░█▒█░█▄▄░█▀▄ \n");
-
-
+    LogPrintf("░█▄▀▒██▀░▀▄▀░█▄▒▄█▒▄▀▄░█▄▀▒██▀▒█▀▄ \n");
+    LogPrintf("░█▒█░█▄▄░▒█▒░█▒▀▒█░█▀█░█▒█░█▄▄░█▀▄ \n");
     LogPrintf(PACKAGE_NAME " version %s\n", version_string);
     LogPrintf("\n\n\n\n\n\n\n\n\n");
     MilliSleep(5*1000); 
+ 
 }
 
 namespace { // Variables internal to initialization process only

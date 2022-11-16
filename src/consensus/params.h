@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2022 The Keymaker Coin developers
+// Copyright (c) 2009-2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -38,8 +38,25 @@ struct Params {
     bool fPowAllowMinDifficultyBlocks;
     bool fPowNoRetargeting;
     int64_t nPowTargetSpacing;
+
+    int64_t nPowTargetSpacingGR;
+    int64_t nPowTargetSpacingCH;
+
+
     uint256 nMinimumChainWork;
     uint256 defaultAssumeValid;
+
+    int64_t DifficultyAdjustmentInterval() const { return nPowTargetTimespan / nPowTargetSpacing; }
+    int64_t nPowTargetTimespan;
+    //uint32_t GRTimestamp;
+    //int64_t diffRetargetFix;
+    //int64_t diffRetargetTake2;
+    uint32_t powForkTime;
+    uint32_t isValid;
+    //int64_t lwmaAveragingWindow;        // Averaging window size for LWMA diff adjust
+    std::vector<uint256> powTypeLimits; // Limits for each pow type (with future-proofing space; can't pick up NUM_BLOCK_TYPES here)
+
+
 
     /** keymaker stuff */
     int64_t nStakeTargetSpacing;

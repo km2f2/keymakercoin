@@ -229,7 +229,41 @@ am__crypto_libbitcoin_crypto_a_SOURCES_DIST = crypto/aes.cpp \
 	crypto/hmac_sha512.cpp crypto/hmac_sha512.h \
 	crypto/ripemd160.cpp crypto/ripemd160.h crypto/sha1.cpp \
 	crypto/sha1.h crypto/sha256.cpp crypto/sha256.h \
-	crypto/sha512.cpp crypto/sha512.h crypto/sha256_sse4.cpp
+	crypto/sha512.cpp crypto/sha512.h crypto/minotaurx/sph_blake.h \
+	crypto/minotaurx/sph_cubehash.h crypto/minotaurx/sph_echo.h \
+	crypto/minotaurx/sph_fugue.h crypto/minotaurx/sph_groestl.h \
+	crypto/minotaurx/sph_hamsi.h crypto/minotaurx/sph_haval.h \
+	crypto/minotaurx/sph_jh.h crypto/minotaurx/sph_keccak.h \
+	crypto/minotaurx/sph_luffa.h crypto/minotaurx/sph_sha2.h \
+	crypto/minotaurx/sph_sha2big.c crypto/minotaurx/sph_shabal.h \
+	crypto/minotaurx/sph_shavite.h crypto/minotaurx/sph_simd.h \
+	crypto/minotaurx/sph_skein.h crypto/minotaurx/sph_types.h \
+	crypto/minotaurx/sph_whirlpool.h crypto/minotaurx/bmw.c \
+	crypto/minotaurx/whirlpool.c crypto/minotaurx/Sponge.h \
+	crypto/minotaurx/blake.c crypto/minotaurx/blake2.h \
+	crypto/minotaurx/blake2-impl.h crypto/minotaurx/blake2s-ref.c \
+	crypto/minotaurx/cubehash.c crypto/minotaurx/echo.c \
+	crypto/minotaurx/fugue.c crypto/minotaurx/groestl.c \
+	crypto/minotaurx/hamsi.c crypto/minotaurx/hashblake.h \
+	crypto/minotaurx/hashgroestl.h crypto/minotaurx/hashquark.h \
+	crypto/minotaurx/hashqubit.h crypto/minotaurx/hashskein.h \
+	crypto/minotaurx/hashx11.h crypto/minotaurx/hashx13.h \
+	crypto/minotaurx/hashx15.h crypto/minotaurx/hashx17.h \
+	crypto/minotaurx/haval.c crypto/minotaurx/jh.c \
+	crypto/minotaurx/keccak.c crypto/minotaurx/luffa.c \
+	crypto/minotaurx/Lyra2.c crypto/minotaurx/Lyra2.h \
+	crypto/minotaurx/Lyra2RE.c crypto/minotaurx/Lyra2RE.h \
+	crypto/minotaurx/shabal.c crypto/minotaurx/shavite.c \
+	crypto/minotaurx/simd.c crypto/minotaurx/skein.c \
+	crypto/minotaurx/Sponge.c crypto/minotaurx/sph_bmw.h \
+	crypto/minotaurx/minotaur.h \
+	crypto/minotaurx/yespower/yespower.c \
+	crypto/minotaurx/yespower/yespower.h \
+	crypto/minotaurx/yespower/crypto/sha256.c \
+	crypto/minotaurx/yespower/crypto/sha256.h \
+	crypto/minotaurx/yespower/util/insecure_memzero.h \
+	crypto/minotaurx/yespower/util/sysendian.h \
+	crypto/sha256_sse4.cpp
 am__dirstamp = $(am__leading_dot)dirstamp
 am__objects_1 = crypto/crypto_libbitcoin_crypto_a-sha256_sse4.$(OBJEXT)
 am_crypto_libbitcoin_crypto_a_OBJECTS =  \
@@ -241,6 +275,29 @@ am_crypto_libbitcoin_crypto_a_OBJECTS =  \
 	crypto/crypto_libbitcoin_crypto_a-sha1.$(OBJEXT) \
 	crypto/crypto_libbitcoin_crypto_a-sha256.$(OBJEXT) \
 	crypto/crypto_libbitcoin_crypto_a-sha512.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.$(OBJEXT) \
+	crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.$(OBJEXT) \
+	crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.$(OBJEXT) \
+	crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.$(OBJEXT) \
 	$(am__objects_1)
 crypto_libbitcoin_crypto_a_OBJECTS =  \
 	$(am_crypto_libbitcoin_crypto_a_OBJECTS)
@@ -983,13 +1040,47 @@ am__libkeymakerconsensus_la_SOURCES_DIST = crypto/aes.cpp crypto/aes.h \
 	crypto/hmac_sha512.cpp crypto/hmac_sha512.h \
 	crypto/ripemd160.cpp crypto/ripemd160.h crypto/sha1.cpp \
 	crypto/sha1.h crypto/sha256.cpp crypto/sha256.h \
-	crypto/sha512.cpp crypto/sha512.h crypto/sha256_sse4.cpp \
-	amount.h arith_uint256.cpp arith_uint256.h \
-	consensus/merkle.cpp consensus/merkle.h consensus/params.h \
-	consensus/validation.h hash.h hash.cpp prevector.h \
-	timedatadummy.cpp primitives/block.cpp primitives/block.h \
-	primitives/transaction.cpp primitives/transaction.h pubkey.cpp \
-	pubkey.h script/bitcoinconsensus.cpp script/interpreter.cpp \
+	crypto/sha512.cpp crypto/sha512.h crypto/minotaurx/sph_blake.h \
+	crypto/minotaurx/sph_cubehash.h crypto/minotaurx/sph_echo.h \
+	crypto/minotaurx/sph_fugue.h crypto/minotaurx/sph_groestl.h \
+	crypto/minotaurx/sph_hamsi.h crypto/minotaurx/sph_haval.h \
+	crypto/minotaurx/sph_jh.h crypto/minotaurx/sph_keccak.h \
+	crypto/minotaurx/sph_luffa.h crypto/minotaurx/sph_sha2.h \
+	crypto/minotaurx/sph_sha2big.c crypto/minotaurx/sph_shabal.h \
+	crypto/minotaurx/sph_shavite.h crypto/minotaurx/sph_simd.h \
+	crypto/minotaurx/sph_skein.h crypto/minotaurx/sph_types.h \
+	crypto/minotaurx/sph_whirlpool.h crypto/minotaurx/bmw.c \
+	crypto/minotaurx/whirlpool.c crypto/minotaurx/Sponge.h \
+	crypto/minotaurx/blake.c crypto/minotaurx/blake2.h \
+	crypto/minotaurx/blake2-impl.h crypto/minotaurx/blake2s-ref.c \
+	crypto/minotaurx/cubehash.c crypto/minotaurx/echo.c \
+	crypto/minotaurx/fugue.c crypto/minotaurx/groestl.c \
+	crypto/minotaurx/hamsi.c crypto/minotaurx/hashblake.h \
+	crypto/minotaurx/hashgroestl.h crypto/minotaurx/hashquark.h \
+	crypto/minotaurx/hashqubit.h crypto/minotaurx/hashskein.h \
+	crypto/minotaurx/hashx11.h crypto/minotaurx/hashx13.h \
+	crypto/minotaurx/hashx15.h crypto/minotaurx/hashx17.h \
+	crypto/minotaurx/haval.c crypto/minotaurx/jh.c \
+	crypto/minotaurx/keccak.c crypto/minotaurx/luffa.c \
+	crypto/minotaurx/Lyra2.c crypto/minotaurx/Lyra2.h \
+	crypto/minotaurx/Lyra2RE.c crypto/minotaurx/Lyra2RE.h \
+	crypto/minotaurx/shabal.c crypto/minotaurx/shavite.c \
+	crypto/minotaurx/simd.c crypto/minotaurx/skein.c \
+	crypto/minotaurx/Sponge.c crypto/minotaurx/sph_bmw.h \
+	crypto/minotaurx/minotaur.h \
+	crypto/minotaurx/yespower/yespower.c \
+	crypto/minotaurx/yespower/yespower.h \
+	crypto/minotaurx/yespower/crypto/sha256.c \
+	crypto/minotaurx/yespower/crypto/sha256.h \
+	crypto/minotaurx/yespower/util/insecure_memzero.h \
+	crypto/minotaurx/yespower/util/sysendian.h \
+	crypto/sha256_sse4.cpp amount.h arith_uint256.cpp \
+	arith_uint256.h consensus/merkle.cpp consensus/merkle.h \
+	consensus/params.h consensus/validation.h hash.h hash.cpp \
+	prevector.h timedatadummy.cpp primitives/block.cpp \
+	primitives/block.h primitives/transaction.cpp \
+	primitives/transaction.h pubkey.cpp pubkey.h \
+	script/bitcoinconsensus.cpp script/interpreter.cpp \
 	script/interpreter.h script/script.cpp script/script.h \
 	script/script_error.cpp script/script_error.h serialize.h \
 	tinyformat.h uint256.cpp uint256.h utilstrencodings.cpp \
@@ -1003,7 +1094,31 @@ am__objects_19 = crypto/libkeymakerconsensus_la-aes.lo \
 	crypto/libkeymakerconsensus_la-ripemd160.lo \
 	crypto/libkeymakerconsensus_la-sha1.lo \
 	crypto/libkeymakerconsensus_la-sha256.lo \
-	crypto/libkeymakerconsensus_la-sha512.lo $(am__objects_18)
+	crypto/libkeymakerconsensus_la-sha512.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-sph_sha2big.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-bmw.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-whirlpool.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-blake.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-blake2s-ref.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-cubehash.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-echo.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-fugue.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-groestl.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-hamsi.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-haval.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-jh.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-keccak.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-luffa.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-Lyra2.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-Lyra2RE.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-shabal.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-shavite.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-simd.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-skein.lo \
+	crypto/minotaurx/libkeymakerconsensus_la-Sponge.lo \
+	crypto/minotaurx/yespower/libkeymakerconsensus_la-yespower.lo \
+	crypto/minotaurx/yespower/crypto/libkeymakerconsensus_la-sha256.lo \
+	$(am__objects_18)
 am__objects_20 = libkeymakerconsensus_la-arith_uint256.lo \
 	consensus/libkeymakerconsensus_la-merkle.lo \
 	libkeymakerconsensus_la-hash.lo \
@@ -1393,6 +1508,24 @@ DEFAULT_INCLUDES = -I. -I$(top_builddir)/src/config
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS)
+AM_V_CC = $(am__v_CC_$(V))
+am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
+am__v_CC_0 = @echo "  CC      " $@;
+am__v_CC_1 = 
+CCLD = $(CC)
+LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+AM_V_CCLD = $(am__v_CCLD_$(V))
+am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
+am__v_CCLD_0 = @echo "  CCLD    " $@;
+am__v_CCLD_1 = 
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
@@ -1429,24 +1562,6 @@ AM_V_OBJCXXLD = $(am__v_OBJCXXLD_$(V))
 am__v_OBJCXXLD_ = $(am__v_OBJCXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_OBJCXXLD_0 = @echo "  OBJCXXLD" $@;
 am__v_OBJCXXLD_1 = 
-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
-	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
-	$(AM_CFLAGS) $(CFLAGS)
-AM_V_CC = $(am__v_CC_$(V))
-am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
-am__v_CC_0 = @echo "  CC      " $@;
-am__v_CC_1 = 
-CCLD = $(CC)
-LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-AM_V_CCLD = $(am__v_CCLD_$(V))
-am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
-am__v_CCLD_0 = @echo "  CCLD    " $@;
-am__v_CCLD_1 = 
 SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
 	$(leveldb_libleveldb_a_SOURCES) \
 	$(leveldb_libleveldb_sse42_a_SOURCES) \
@@ -1768,11 +1883,11 @@ CC = /usr/bin/ccache gcc
 CCACHE = /usr/bin/ccache
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CLIENT_VERSION_BUILD = 0
+CLIENT_VERSION_BUILD = 1
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
-CLIENT_VERSION_MINOR = 0
-CLIENT_VERSION_REVISION = 0
+CLIENT_VERSION_MINOR = 1
+CLIENT_VERSION_REVISION = 4
 COPYRIGHT_HOLDERS = The %s developers
 COPYRIGHT_HOLDERS_FINAL = The Keymaker developers
 COPYRIGHT_HOLDERS_SUBSTITUTION = Keymaker
@@ -1785,7 +1900,7 @@ CRYPTO_LIBS = -lcrypto
 CXX = /usr/bin/ccache g++ -std=c++11
 CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = --param ggc-min-expand=1 --param ggc-min-heapsize=32768
+CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wvla -Wformat-security -Wno-unused-parameter -Wno-implicit-fallthrough
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -1844,7 +1959,7 @@ MAKEINFO = ${SHELL} /home/administrator/keymaker-coin/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
-MINIUPNPC_LIBS = -lminiupnpc
+MINIUPNPC_LIBS = 
 MKDIR_P = /bin/mkdir -p
 MOC = /usr/lib/qt5/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
@@ -1861,10 +1976,10 @@ OTOOL64 =
 PACKAGE = keymaker
 PACKAGE_BUGREPORT = https://github.com/KeymakerCoin/Keymaker-Coin-Cryptocurrency/issues
 PACKAGE_NAME = Keymaker
-PACKAGE_STRING = Keymaker 1.0.0
+PACKAGE_STRING = Keymaker 1.1.4
 PACKAGE_TARNAME = keymaker
 PACKAGE_URL = https://keymakercoin.org/
-PACKAGE_VERSION = 1.0.0
+PACKAGE_VERSION = 1.1.4
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
 PIE_FLAGS = -fPIE
@@ -1935,7 +2050,7 @@ UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_UPNP = 
-VERSION = 1.0.0
+VERSION = 1.1.4
 WINDOWS_BITS = 
 WINDRES = 
 X11XCB_CFLAGS = 
@@ -2104,7 +2219,40 @@ crypto_libbitcoin_crypto_a_SOURCES = crypto/aes.cpp crypto/aes.h \
 	crypto/hmac_sha512.cpp crypto/hmac_sha512.h \
 	crypto/ripemd160.cpp crypto/ripemd160.h crypto/sha1.cpp \
 	crypto/sha1.h crypto/sha256.cpp crypto/sha256.h \
-	crypto/sha512.cpp crypto/sha512.h $(am__append_5)
+	crypto/sha512.cpp crypto/sha512.h crypto/minotaurx/sph_blake.h \
+	crypto/minotaurx/sph_cubehash.h crypto/minotaurx/sph_echo.h \
+	crypto/minotaurx/sph_fugue.h crypto/minotaurx/sph_groestl.h \
+	crypto/minotaurx/sph_hamsi.h crypto/minotaurx/sph_haval.h \
+	crypto/minotaurx/sph_jh.h crypto/minotaurx/sph_keccak.h \
+	crypto/minotaurx/sph_luffa.h crypto/minotaurx/sph_sha2.h \
+	crypto/minotaurx/sph_sha2big.c crypto/minotaurx/sph_shabal.h \
+	crypto/minotaurx/sph_shavite.h crypto/minotaurx/sph_simd.h \
+	crypto/minotaurx/sph_skein.h crypto/minotaurx/sph_types.h \
+	crypto/minotaurx/sph_whirlpool.h crypto/minotaurx/bmw.c \
+	crypto/minotaurx/whirlpool.c crypto/minotaurx/Sponge.h \
+	crypto/minotaurx/blake.c crypto/minotaurx/blake2.h \
+	crypto/minotaurx/blake2-impl.h crypto/minotaurx/blake2s-ref.c \
+	crypto/minotaurx/cubehash.c crypto/minotaurx/echo.c \
+	crypto/minotaurx/fugue.c crypto/minotaurx/groestl.c \
+	crypto/minotaurx/hamsi.c crypto/minotaurx/hashblake.h \
+	crypto/minotaurx/hashgroestl.h crypto/minotaurx/hashquark.h \
+	crypto/minotaurx/hashqubit.h crypto/minotaurx/hashskein.h \
+	crypto/minotaurx/hashx11.h crypto/minotaurx/hashx13.h \
+	crypto/minotaurx/hashx15.h crypto/minotaurx/hashx17.h \
+	crypto/minotaurx/haval.c crypto/minotaurx/jh.c \
+	crypto/minotaurx/keccak.c crypto/minotaurx/luffa.c \
+	crypto/minotaurx/Lyra2.c crypto/minotaurx/Lyra2.h \
+	crypto/minotaurx/Lyra2RE.c crypto/minotaurx/Lyra2RE.h \
+	crypto/minotaurx/shabal.c crypto/minotaurx/shavite.c \
+	crypto/minotaurx/simd.c crypto/minotaurx/skein.c \
+	crypto/minotaurx/Sponge.c crypto/minotaurx/sph_bmw.h \
+	crypto/minotaurx/minotaur.h \
+	crypto/minotaurx/yespower/yespower.c \
+	crypto/minotaurx/yespower/yespower.h \
+	crypto/minotaurx/yespower/crypto/sha256.c \
+	crypto/minotaurx/yespower/crypto/sha256.h \
+	crypto/minotaurx/yespower/util/insecure_memzero.h \
+	crypto/minotaurx/yespower/util/sysendian.h $(am__append_5)
 
 # consensus: shared between all executables that validate any consensus rules.
 libbitcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
@@ -2239,6 +2387,12 @@ libkeymakerconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 CTAES_DIST = crypto/ctaes/bench.c crypto/ctaes/ctaes.c \
 	crypto/ctaes/ctaes.h crypto/ctaes/README.md \
 	crypto/ctaes/test.c
+
+# MinotaurX
+CRYPTO_HELPER_DIST = crypto/minotaurx/aes_helper.c \
+	crypto/minotaurx/hamsi_helper.c \
+	crypto/minotaurx/haval_helper.c crypto/minotaurx/md_helper.c \
+	crypto/minotaurx/sph_md_helper.c
 CLEANFILES = $(EXTRA_LIBRARIES) *.gcda *.gcno compat/*.gcda \
 	compat/*.gcno consensus/*.gcda consensus/*.gcno crypto/*.gcda \
 	crypto/*.gcno policy/*.gcda policy/*.gcno primitives/*.gcda \
@@ -2247,7 +2401,11 @@ CLEANFILES = $(EXTRA_LIBRARIES) *.gcda *.gcno compat/*.gcda \
 	wallet/*.gcno wallet/test/*.gcda wallet/test/*.gcno zmq/*.gcda \
 	zmq/*.gcno obj/build.h $(am__append_27) $(am__append_32) \
 	$(am__append_41) $(am__append_48)
-EXTRA_DIST = $(CTAES_DIST)
+
+#EXTRA_DIST = $(CTAES_DIST)
+
+# MinotaurX
+EXTRA_DIST = $(CTAES_DIST) $(CRYPTO_HELPER_DIST)
 LIBLEVELDB_INT = leveldb/libleveldb.a
 LIBMEMENV_INT = leveldb/libmemenv.a
 LIBLEVELDB_SSE42_INT = leveldb/libleveldb_sse42.a
@@ -3028,7 +3186,7 @@ CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda 
 all: all-recursive
 
 .SUFFIXES:
-.SUFFIXES: .cc .cpp .lo .log .mm .o .obj .rc .test .test$(EXEEXT) .trs
+.SUFFIXES: .c .cc .cpp .lo .log .mm .o .obj .rc .test .test$(EXEEXT) .trs
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/Makefile.leveldb.include $(srcdir)/Makefile.test.include $(srcdir)/Makefile.bench.include $(srcdir)/Makefile.qt.include $(srcdir)/Makefile.qttest.include $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -3081,6 +3239,93 @@ crypto/crypto_libbitcoin_crypto_a-sha256.$(OBJEXT):  \
 	crypto/$(am__dirstamp) crypto/$(DEPDIR)/$(am__dirstamp)
 crypto/crypto_libbitcoin_crypto_a-sha512.$(OBJEXT):  \
 	crypto/$(am__dirstamp) crypto/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/$(am__dirstamp):
+	@$(MKDIR_P) crypto/minotaurx
+	@: > crypto/minotaurx/$(am__dirstamp)
+crypto/minotaurx/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) crypto/minotaurx/$(DEPDIR)
+	@: > crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.$(OBJEXT):  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/yespower/$(am__dirstamp):
+	@$(MKDIR_P) crypto/minotaurx/yespower
+	@: > crypto/minotaurx/yespower/$(am__dirstamp)
+crypto/minotaurx/yespower/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) crypto/minotaurx/yespower/$(DEPDIR)
+	@: > crypto/minotaurx/yespower/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.$(OBJEXT):  \
+	crypto/minotaurx/yespower/$(am__dirstamp) \
+	crypto/minotaurx/yespower/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/yespower/crypto/$(am__dirstamp):
+	@$(MKDIR_P) crypto/minotaurx/yespower/crypto
+	@: > crypto/minotaurx/yespower/crypto/$(am__dirstamp)
+crypto/minotaurx/yespower/crypto/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) crypto/minotaurx/yespower/crypto/$(DEPDIR)
+	@: > crypto/minotaurx/yespower/crypto/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.$(OBJEXT):  \
+	crypto/minotaurx/yespower/crypto/$(am__dirstamp) \
+	crypto/minotaurx/yespower/crypto/$(DEPDIR)/$(am__dirstamp)
 crypto/crypto_libbitcoin_crypto_a-sha256_sse4.$(OBJEXT):  \
 	crypto/$(am__dirstamp) crypto/$(DEPDIR)/$(am__dirstamp)
 
@@ -3706,6 +3951,75 @@ crypto/libkeymakerconsensus_la-sha256.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
 crypto/libkeymakerconsensus_la-sha512.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-sph_sha2big.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-bmw.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-whirlpool.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-blake.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-blake2s-ref.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-cubehash.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-echo.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-fugue.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-groestl.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-hamsi.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-haval.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-jh.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-keccak.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-luffa.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-Lyra2.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-Lyra2RE.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-shabal.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-shavite.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-simd.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-skein.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/libkeymakerconsensus_la-Sponge.lo:  \
+	crypto/minotaurx/$(am__dirstamp) \
+	crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/yespower/libkeymakerconsensus_la-yespower.lo:  \
+	crypto/minotaurx/yespower/$(am__dirstamp) \
+	crypto/minotaurx/yespower/$(DEPDIR)/$(am__dirstamp)
+crypto/minotaurx/yespower/crypto/libkeymakerconsensus_la-sha256.lo:  \
+	crypto/minotaurx/yespower/crypto/$(am__dirstamp) \
+	crypto/minotaurx/yespower/crypto/$(DEPDIR)/$(am__dirstamp)
 crypto/libkeymakerconsensus_la-sha256_sse4.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
 consensus/libkeymakerconsensus_la-merkle.lo:  \
@@ -4060,6 +4374,12 @@ mostlyclean-compile:
 	-rm -f consensus/*.lo
 	-rm -f crypto/*.$(OBJEXT)
 	-rm -f crypto/*.lo
+	-rm -f crypto/minotaurx/*.$(OBJEXT)
+	-rm -f crypto/minotaurx/*.lo
+	-rm -f crypto/minotaurx/yespower/*.$(OBJEXT)
+	-rm -f crypto/minotaurx/yespower/*.lo
+	-rm -f crypto/minotaurx/yespower/crypto/*.$(OBJEXT)
+	-rm -f crypto/minotaurx/yespower/crypto/*.lo
 	-rm -f leveldb/db/*.$(OBJEXT)
 	-rm -f leveldb/helpers/memenv/*.$(OBJEXT)
 	-rm -f leveldb/port/*.$(OBJEXT)
@@ -4193,6 +4513,52 @@ include crypto/$(DEPDIR)/libkeymakerconsensus_la-sha1.Plo
 include crypto/$(DEPDIR)/libkeymakerconsensus_la-sha256.Plo
 include crypto/$(DEPDIR)/libkeymakerconsensus_la-sha256_sse4.Plo
 include crypto/$(DEPDIR)/libkeymakerconsensus_la-sha512.Plo
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2RE.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Sponge.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake2s-ref.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-bmw.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-cubehash.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-echo.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-fugue.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-groestl.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-hamsi.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-haval.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-jh.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-keccak.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-luffa.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shabal.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shavite.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-simd.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-skein.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-sph_sha2big.Po
+include crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-whirlpool.Po
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2RE.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Sponge.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake2s-ref.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-bmw.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-cubehash.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-echo.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-fugue.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-groestl.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-hamsi.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-haval.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-jh.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-keccak.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-luffa.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shabal.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shavite.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-simd.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-skein.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-sph_sha2big.Plo
+include crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-whirlpool.Plo
+include crypto/minotaurx/yespower/$(DEPDIR)/crypto_libbitcoin_crypto_a-yespower.Po
+include crypto/minotaurx/yespower/$(DEPDIR)/libkeymakerconsensus_la-yespower.Plo
+include crypto/minotaurx/yespower/crypto/$(DEPDIR)/crypto_libbitcoin_crypto_a-sha256.Po
+include crypto/minotaurx/yespower/crypto/$(DEPDIR)/libkeymakerconsensus_la-sha256.Plo
 include leveldb/db/$(DEPDIR)/leveldb_libleveldb_a-builder.Po
 include leveldb/db/$(DEPDIR)/leveldb_libleveldb_a-c.Po
 include leveldb/db/$(DEPDIR)/leveldb_libleveldb_a-db_impl.Po
@@ -4462,6 +4828,513 @@ include wallet/test/$(DEPDIR)/test_test_keymaker-wallet_tests.Po
 include zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqabstractnotifier.Po
 include zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqnotificationinterface.Po
 include zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqpublishnotifier.Po
+
+.c.o:
+	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ $<
+
+.c.obj:
+	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.c.lo:
+	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
+	$(LTCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.o: crypto/minotaurx/sph_sha2big.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-sph_sha2big.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.o `test -f 'crypto/minotaurx/sph_sha2big.c' || echo '$(srcdir)/'`crypto/minotaurx/sph_sha2big.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-sph_sha2big.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-sph_sha2big.Po
+#	$(AM_V_CC)source='crypto/minotaurx/sph_sha2big.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.o `test -f 'crypto/minotaurx/sph_sha2big.c' || echo '$(srcdir)/'`crypto/minotaurx/sph_sha2big.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.obj: crypto/minotaurx/sph_sha2big.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-sph_sha2big.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.obj `if test -f 'crypto/minotaurx/sph_sha2big.c'; then $(CYGPATH_W) 'crypto/minotaurx/sph_sha2big.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/sph_sha2big.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-sph_sha2big.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-sph_sha2big.Po
+#	$(AM_V_CC)source='crypto/minotaurx/sph_sha2big.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-sph_sha2big.obj `if test -f 'crypto/minotaurx/sph_sha2big.c'; then $(CYGPATH_W) 'crypto/minotaurx/sph_sha2big.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/sph_sha2big.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.o: crypto/minotaurx/bmw.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-bmw.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.o `test -f 'crypto/minotaurx/bmw.c' || echo '$(srcdir)/'`crypto/minotaurx/bmw.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-bmw.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-bmw.Po
+#	$(AM_V_CC)source='crypto/minotaurx/bmw.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.o `test -f 'crypto/minotaurx/bmw.c' || echo '$(srcdir)/'`crypto/minotaurx/bmw.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.obj: crypto/minotaurx/bmw.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-bmw.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.obj `if test -f 'crypto/minotaurx/bmw.c'; then $(CYGPATH_W) 'crypto/minotaurx/bmw.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/bmw.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-bmw.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-bmw.Po
+#	$(AM_V_CC)source='crypto/minotaurx/bmw.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-bmw.obj `if test -f 'crypto/minotaurx/bmw.c'; then $(CYGPATH_W) 'crypto/minotaurx/bmw.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/bmw.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.o: crypto/minotaurx/whirlpool.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-whirlpool.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.o `test -f 'crypto/minotaurx/whirlpool.c' || echo '$(srcdir)/'`crypto/minotaurx/whirlpool.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-whirlpool.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-whirlpool.Po
+#	$(AM_V_CC)source='crypto/minotaurx/whirlpool.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.o `test -f 'crypto/minotaurx/whirlpool.c' || echo '$(srcdir)/'`crypto/minotaurx/whirlpool.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.obj: crypto/minotaurx/whirlpool.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-whirlpool.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.obj `if test -f 'crypto/minotaurx/whirlpool.c'; then $(CYGPATH_W) 'crypto/minotaurx/whirlpool.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/whirlpool.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-whirlpool.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-whirlpool.Po
+#	$(AM_V_CC)source='crypto/minotaurx/whirlpool.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-whirlpool.obj `if test -f 'crypto/minotaurx/whirlpool.c'; then $(CYGPATH_W) 'crypto/minotaurx/whirlpool.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/whirlpool.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.o: crypto/minotaurx/blake.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.o `test -f 'crypto/minotaurx/blake.c' || echo '$(srcdir)/'`crypto/minotaurx/blake.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake.Po
+#	$(AM_V_CC)source='crypto/minotaurx/blake.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.o `test -f 'crypto/minotaurx/blake.c' || echo '$(srcdir)/'`crypto/minotaurx/blake.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.obj: crypto/minotaurx/blake.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.obj `if test -f 'crypto/minotaurx/blake.c'; then $(CYGPATH_W) 'crypto/minotaurx/blake.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/blake.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake.Po
+#	$(AM_V_CC)source='crypto/minotaurx/blake.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake.obj `if test -f 'crypto/minotaurx/blake.c'; then $(CYGPATH_W) 'crypto/minotaurx/blake.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/blake.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.o: crypto/minotaurx/blake2s-ref.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake2s-ref.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.o `test -f 'crypto/minotaurx/blake2s-ref.c' || echo '$(srcdir)/'`crypto/minotaurx/blake2s-ref.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake2s-ref.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake2s-ref.Po
+#	$(AM_V_CC)source='crypto/minotaurx/blake2s-ref.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.o `test -f 'crypto/minotaurx/blake2s-ref.c' || echo '$(srcdir)/'`crypto/minotaurx/blake2s-ref.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.obj: crypto/minotaurx/blake2s-ref.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake2s-ref.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.obj `if test -f 'crypto/minotaurx/blake2s-ref.c'; then $(CYGPATH_W) 'crypto/minotaurx/blake2s-ref.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/blake2s-ref.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake2s-ref.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-blake2s-ref.Po
+#	$(AM_V_CC)source='crypto/minotaurx/blake2s-ref.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-blake2s-ref.obj `if test -f 'crypto/minotaurx/blake2s-ref.c'; then $(CYGPATH_W) 'crypto/minotaurx/blake2s-ref.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/blake2s-ref.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.o: crypto/minotaurx/cubehash.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-cubehash.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.o `test -f 'crypto/minotaurx/cubehash.c' || echo '$(srcdir)/'`crypto/minotaurx/cubehash.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-cubehash.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-cubehash.Po
+#	$(AM_V_CC)source='crypto/minotaurx/cubehash.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.o `test -f 'crypto/minotaurx/cubehash.c' || echo '$(srcdir)/'`crypto/minotaurx/cubehash.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.obj: crypto/minotaurx/cubehash.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-cubehash.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.obj `if test -f 'crypto/minotaurx/cubehash.c'; then $(CYGPATH_W) 'crypto/minotaurx/cubehash.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/cubehash.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-cubehash.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-cubehash.Po
+#	$(AM_V_CC)source='crypto/minotaurx/cubehash.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-cubehash.obj `if test -f 'crypto/minotaurx/cubehash.c'; then $(CYGPATH_W) 'crypto/minotaurx/cubehash.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/cubehash.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.o: crypto/minotaurx/echo.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-echo.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.o `test -f 'crypto/minotaurx/echo.c' || echo '$(srcdir)/'`crypto/minotaurx/echo.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-echo.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-echo.Po
+#	$(AM_V_CC)source='crypto/minotaurx/echo.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.o `test -f 'crypto/minotaurx/echo.c' || echo '$(srcdir)/'`crypto/minotaurx/echo.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.obj: crypto/minotaurx/echo.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-echo.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.obj `if test -f 'crypto/minotaurx/echo.c'; then $(CYGPATH_W) 'crypto/minotaurx/echo.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/echo.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-echo.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-echo.Po
+#	$(AM_V_CC)source='crypto/minotaurx/echo.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-echo.obj `if test -f 'crypto/minotaurx/echo.c'; then $(CYGPATH_W) 'crypto/minotaurx/echo.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/echo.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.o: crypto/minotaurx/fugue.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-fugue.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.o `test -f 'crypto/minotaurx/fugue.c' || echo '$(srcdir)/'`crypto/minotaurx/fugue.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-fugue.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-fugue.Po
+#	$(AM_V_CC)source='crypto/minotaurx/fugue.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.o `test -f 'crypto/minotaurx/fugue.c' || echo '$(srcdir)/'`crypto/minotaurx/fugue.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.obj: crypto/minotaurx/fugue.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-fugue.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.obj `if test -f 'crypto/minotaurx/fugue.c'; then $(CYGPATH_W) 'crypto/minotaurx/fugue.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/fugue.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-fugue.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-fugue.Po
+#	$(AM_V_CC)source='crypto/minotaurx/fugue.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-fugue.obj `if test -f 'crypto/minotaurx/fugue.c'; then $(CYGPATH_W) 'crypto/minotaurx/fugue.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/fugue.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.o: crypto/minotaurx/groestl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-groestl.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.o `test -f 'crypto/minotaurx/groestl.c' || echo '$(srcdir)/'`crypto/minotaurx/groestl.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-groestl.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-groestl.Po
+#	$(AM_V_CC)source='crypto/minotaurx/groestl.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.o `test -f 'crypto/minotaurx/groestl.c' || echo '$(srcdir)/'`crypto/minotaurx/groestl.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.obj: crypto/minotaurx/groestl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-groestl.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.obj `if test -f 'crypto/minotaurx/groestl.c'; then $(CYGPATH_W) 'crypto/minotaurx/groestl.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/groestl.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-groestl.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-groestl.Po
+#	$(AM_V_CC)source='crypto/minotaurx/groestl.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-groestl.obj `if test -f 'crypto/minotaurx/groestl.c'; then $(CYGPATH_W) 'crypto/minotaurx/groestl.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/groestl.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.o: crypto/minotaurx/hamsi.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-hamsi.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.o `test -f 'crypto/minotaurx/hamsi.c' || echo '$(srcdir)/'`crypto/minotaurx/hamsi.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-hamsi.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-hamsi.Po
+#	$(AM_V_CC)source='crypto/minotaurx/hamsi.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.o `test -f 'crypto/minotaurx/hamsi.c' || echo '$(srcdir)/'`crypto/minotaurx/hamsi.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.obj: crypto/minotaurx/hamsi.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-hamsi.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.obj `if test -f 'crypto/minotaurx/hamsi.c'; then $(CYGPATH_W) 'crypto/minotaurx/hamsi.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/hamsi.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-hamsi.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-hamsi.Po
+#	$(AM_V_CC)source='crypto/minotaurx/hamsi.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-hamsi.obj `if test -f 'crypto/minotaurx/hamsi.c'; then $(CYGPATH_W) 'crypto/minotaurx/hamsi.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/hamsi.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.o: crypto/minotaurx/haval.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-haval.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.o `test -f 'crypto/minotaurx/haval.c' || echo '$(srcdir)/'`crypto/minotaurx/haval.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-haval.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-haval.Po
+#	$(AM_V_CC)source='crypto/minotaurx/haval.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.o `test -f 'crypto/minotaurx/haval.c' || echo '$(srcdir)/'`crypto/minotaurx/haval.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.obj: crypto/minotaurx/haval.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-haval.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.obj `if test -f 'crypto/minotaurx/haval.c'; then $(CYGPATH_W) 'crypto/minotaurx/haval.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/haval.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-haval.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-haval.Po
+#	$(AM_V_CC)source='crypto/minotaurx/haval.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-haval.obj `if test -f 'crypto/minotaurx/haval.c'; then $(CYGPATH_W) 'crypto/minotaurx/haval.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/haval.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.o: crypto/minotaurx/jh.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-jh.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.o `test -f 'crypto/minotaurx/jh.c' || echo '$(srcdir)/'`crypto/minotaurx/jh.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-jh.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-jh.Po
+#	$(AM_V_CC)source='crypto/minotaurx/jh.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.o `test -f 'crypto/minotaurx/jh.c' || echo '$(srcdir)/'`crypto/minotaurx/jh.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.obj: crypto/minotaurx/jh.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-jh.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.obj `if test -f 'crypto/minotaurx/jh.c'; then $(CYGPATH_W) 'crypto/minotaurx/jh.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/jh.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-jh.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-jh.Po
+#	$(AM_V_CC)source='crypto/minotaurx/jh.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-jh.obj `if test -f 'crypto/minotaurx/jh.c'; then $(CYGPATH_W) 'crypto/minotaurx/jh.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/jh.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.o: crypto/minotaurx/keccak.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-keccak.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.o `test -f 'crypto/minotaurx/keccak.c' || echo '$(srcdir)/'`crypto/minotaurx/keccak.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-keccak.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-keccak.Po
+#	$(AM_V_CC)source='crypto/minotaurx/keccak.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.o `test -f 'crypto/minotaurx/keccak.c' || echo '$(srcdir)/'`crypto/minotaurx/keccak.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.obj: crypto/minotaurx/keccak.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-keccak.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.obj `if test -f 'crypto/minotaurx/keccak.c'; then $(CYGPATH_W) 'crypto/minotaurx/keccak.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/keccak.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-keccak.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-keccak.Po
+#	$(AM_V_CC)source='crypto/minotaurx/keccak.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-keccak.obj `if test -f 'crypto/minotaurx/keccak.c'; then $(CYGPATH_W) 'crypto/minotaurx/keccak.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/keccak.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.o: crypto/minotaurx/luffa.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-luffa.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.o `test -f 'crypto/minotaurx/luffa.c' || echo '$(srcdir)/'`crypto/minotaurx/luffa.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-luffa.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-luffa.Po
+#	$(AM_V_CC)source='crypto/minotaurx/luffa.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.o `test -f 'crypto/minotaurx/luffa.c' || echo '$(srcdir)/'`crypto/minotaurx/luffa.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.obj: crypto/minotaurx/luffa.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-luffa.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.obj `if test -f 'crypto/minotaurx/luffa.c'; then $(CYGPATH_W) 'crypto/minotaurx/luffa.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/luffa.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-luffa.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-luffa.Po
+#	$(AM_V_CC)source='crypto/minotaurx/luffa.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-luffa.obj `if test -f 'crypto/minotaurx/luffa.c'; then $(CYGPATH_W) 'crypto/minotaurx/luffa.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/luffa.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.o: crypto/minotaurx/Lyra2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.o `test -f 'crypto/minotaurx/Lyra2.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2.Po
+#	$(AM_V_CC)source='crypto/minotaurx/Lyra2.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.o `test -f 'crypto/minotaurx/Lyra2.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.obj: crypto/minotaurx/Lyra2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.obj `if test -f 'crypto/minotaurx/Lyra2.c'; then $(CYGPATH_W) 'crypto/minotaurx/Lyra2.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/Lyra2.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2.Po
+#	$(AM_V_CC)source='crypto/minotaurx/Lyra2.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2.obj `if test -f 'crypto/minotaurx/Lyra2.c'; then $(CYGPATH_W) 'crypto/minotaurx/Lyra2.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/Lyra2.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.o: crypto/minotaurx/Lyra2RE.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2RE.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.o `test -f 'crypto/minotaurx/Lyra2RE.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2RE.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2RE.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2RE.Po
+#	$(AM_V_CC)source='crypto/minotaurx/Lyra2RE.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.o `test -f 'crypto/minotaurx/Lyra2RE.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2RE.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.obj: crypto/minotaurx/Lyra2RE.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2RE.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.obj `if test -f 'crypto/minotaurx/Lyra2RE.c'; then $(CYGPATH_W) 'crypto/minotaurx/Lyra2RE.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/Lyra2RE.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2RE.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Lyra2RE.Po
+#	$(AM_V_CC)source='crypto/minotaurx/Lyra2RE.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Lyra2RE.obj `if test -f 'crypto/minotaurx/Lyra2RE.c'; then $(CYGPATH_W) 'crypto/minotaurx/Lyra2RE.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/Lyra2RE.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.o: crypto/minotaurx/shabal.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shabal.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.o `test -f 'crypto/minotaurx/shabal.c' || echo '$(srcdir)/'`crypto/minotaurx/shabal.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shabal.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shabal.Po
+#	$(AM_V_CC)source='crypto/minotaurx/shabal.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.o `test -f 'crypto/minotaurx/shabal.c' || echo '$(srcdir)/'`crypto/minotaurx/shabal.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.obj: crypto/minotaurx/shabal.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shabal.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.obj `if test -f 'crypto/minotaurx/shabal.c'; then $(CYGPATH_W) 'crypto/minotaurx/shabal.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/shabal.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shabal.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shabal.Po
+#	$(AM_V_CC)source='crypto/minotaurx/shabal.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shabal.obj `if test -f 'crypto/minotaurx/shabal.c'; then $(CYGPATH_W) 'crypto/minotaurx/shabal.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/shabal.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.o: crypto/minotaurx/shavite.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shavite.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.o `test -f 'crypto/minotaurx/shavite.c' || echo '$(srcdir)/'`crypto/minotaurx/shavite.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shavite.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shavite.Po
+#	$(AM_V_CC)source='crypto/minotaurx/shavite.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.o `test -f 'crypto/minotaurx/shavite.c' || echo '$(srcdir)/'`crypto/minotaurx/shavite.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.obj: crypto/minotaurx/shavite.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shavite.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.obj `if test -f 'crypto/minotaurx/shavite.c'; then $(CYGPATH_W) 'crypto/minotaurx/shavite.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/shavite.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shavite.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-shavite.Po
+#	$(AM_V_CC)source='crypto/minotaurx/shavite.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-shavite.obj `if test -f 'crypto/minotaurx/shavite.c'; then $(CYGPATH_W) 'crypto/minotaurx/shavite.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/shavite.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.o: crypto/minotaurx/simd.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-simd.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.o `test -f 'crypto/minotaurx/simd.c' || echo '$(srcdir)/'`crypto/minotaurx/simd.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-simd.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-simd.Po
+#	$(AM_V_CC)source='crypto/minotaurx/simd.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.o `test -f 'crypto/minotaurx/simd.c' || echo '$(srcdir)/'`crypto/minotaurx/simd.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.obj: crypto/minotaurx/simd.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-simd.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.obj `if test -f 'crypto/minotaurx/simd.c'; then $(CYGPATH_W) 'crypto/minotaurx/simd.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/simd.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-simd.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-simd.Po
+#	$(AM_V_CC)source='crypto/minotaurx/simd.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-simd.obj `if test -f 'crypto/minotaurx/simd.c'; then $(CYGPATH_W) 'crypto/minotaurx/simd.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/simd.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.o: crypto/minotaurx/skein.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-skein.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.o `test -f 'crypto/minotaurx/skein.c' || echo '$(srcdir)/'`crypto/minotaurx/skein.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-skein.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-skein.Po
+#	$(AM_V_CC)source='crypto/minotaurx/skein.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.o `test -f 'crypto/minotaurx/skein.c' || echo '$(srcdir)/'`crypto/minotaurx/skein.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.obj: crypto/minotaurx/skein.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-skein.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.obj `if test -f 'crypto/minotaurx/skein.c'; then $(CYGPATH_W) 'crypto/minotaurx/skein.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/skein.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-skein.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-skein.Po
+#	$(AM_V_CC)source='crypto/minotaurx/skein.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-skein.obj `if test -f 'crypto/minotaurx/skein.c'; then $(CYGPATH_W) 'crypto/minotaurx/skein.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/skein.c'; fi`
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.o: crypto/minotaurx/Sponge.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.o -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Sponge.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.o `test -f 'crypto/minotaurx/Sponge.c' || echo '$(srcdir)/'`crypto/minotaurx/Sponge.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Sponge.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Sponge.Po
+#	$(AM_V_CC)source='crypto/minotaurx/Sponge.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.o `test -f 'crypto/minotaurx/Sponge.c' || echo '$(srcdir)/'`crypto/minotaurx/Sponge.c
+
+crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.obj: crypto/minotaurx/Sponge.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.obj -MD -MP -MF crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Sponge.Tpo -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.obj `if test -f 'crypto/minotaurx/Sponge.c'; then $(CYGPATH_W) 'crypto/minotaurx/Sponge.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/Sponge.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Sponge.Tpo crypto/minotaurx/$(DEPDIR)/crypto_libbitcoin_crypto_a-Sponge.Po
+#	$(AM_V_CC)source='crypto/minotaurx/Sponge.c' object='crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/crypto_libbitcoin_crypto_a-Sponge.obj `if test -f 'crypto/minotaurx/Sponge.c'; then $(CYGPATH_W) 'crypto/minotaurx/Sponge.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/Sponge.c'; fi`
+
+crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.o: crypto/minotaurx/yespower/yespower.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.o -MD -MP -MF crypto/minotaurx/yespower/$(DEPDIR)/crypto_libbitcoin_crypto_a-yespower.Tpo -c -o crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.o `test -f 'crypto/minotaurx/yespower/yespower.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/yespower.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/yespower/$(DEPDIR)/crypto_libbitcoin_crypto_a-yespower.Tpo crypto/minotaurx/yespower/$(DEPDIR)/crypto_libbitcoin_crypto_a-yespower.Po
+#	$(AM_V_CC)source='crypto/minotaurx/yespower/yespower.c' object='crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.o `test -f 'crypto/minotaurx/yespower/yespower.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/yespower.c
+
+crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.obj: crypto/minotaurx/yespower/yespower.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.obj -MD -MP -MF crypto/minotaurx/yespower/$(DEPDIR)/crypto_libbitcoin_crypto_a-yespower.Tpo -c -o crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.obj `if test -f 'crypto/minotaurx/yespower/yespower.c'; then $(CYGPATH_W) 'crypto/minotaurx/yespower/yespower.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/yespower/yespower.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/yespower/$(DEPDIR)/crypto_libbitcoin_crypto_a-yespower.Tpo crypto/minotaurx/yespower/$(DEPDIR)/crypto_libbitcoin_crypto_a-yespower.Po
+#	$(AM_V_CC)source='crypto/minotaurx/yespower/yespower.c' object='crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/yespower/crypto_libbitcoin_crypto_a-yespower.obj `if test -f 'crypto/minotaurx/yespower/yespower.c'; then $(CYGPATH_W) 'crypto/minotaurx/yespower/yespower.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/yespower/yespower.c'; fi`
+
+crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.o: crypto/minotaurx/yespower/crypto/sha256.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.o -MD -MP -MF crypto/minotaurx/yespower/crypto/$(DEPDIR)/crypto_libbitcoin_crypto_a-sha256.Tpo -c -o crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.o `test -f 'crypto/minotaurx/yespower/crypto/sha256.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/crypto/sha256.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/yespower/crypto/$(DEPDIR)/crypto_libbitcoin_crypto_a-sha256.Tpo crypto/minotaurx/yespower/crypto/$(DEPDIR)/crypto_libbitcoin_crypto_a-sha256.Po
+#	$(AM_V_CC)source='crypto/minotaurx/yespower/crypto/sha256.c' object='crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.o `test -f 'crypto/minotaurx/yespower/crypto/sha256.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/crypto/sha256.c
+
+crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.obj: crypto/minotaurx/yespower/crypto/sha256.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.obj -MD -MP -MF crypto/minotaurx/yespower/crypto/$(DEPDIR)/crypto_libbitcoin_crypto_a-sha256.Tpo -c -o crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.obj `if test -f 'crypto/minotaurx/yespower/crypto/sha256.c'; then $(CYGPATH_W) 'crypto/minotaurx/yespower/crypto/sha256.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/yespower/crypto/sha256.c'; fi`
+	$(AM_V_at)$(am__mv) crypto/minotaurx/yespower/crypto/$(DEPDIR)/crypto_libbitcoin_crypto_a-sha256.Tpo crypto/minotaurx/yespower/crypto/$(DEPDIR)/crypto_libbitcoin_crypto_a-sha256.Po
+#	$(AM_V_CC)source='crypto/minotaurx/yespower/crypto/sha256.c' object='crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/yespower/crypto/crypto_libbitcoin_crypto_a-sha256.obj `if test -f 'crypto/minotaurx/yespower/crypto/sha256.c'; then $(CYGPATH_W) 'crypto/minotaurx/yespower/crypto/sha256.c'; else $(CYGPATH_W) '$(srcdir)/crypto/minotaurx/yespower/crypto/sha256.c'; fi`
+
+crypto/minotaurx/libkeymakerconsensus_la-sph_sha2big.lo: crypto/minotaurx/sph_sha2big.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-sph_sha2big.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-sph_sha2big.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-sph_sha2big.lo `test -f 'crypto/minotaurx/sph_sha2big.c' || echo '$(srcdir)/'`crypto/minotaurx/sph_sha2big.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-sph_sha2big.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-sph_sha2big.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/sph_sha2big.c' object='crypto/minotaurx/libkeymakerconsensus_la-sph_sha2big.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-sph_sha2big.lo `test -f 'crypto/minotaurx/sph_sha2big.c' || echo '$(srcdir)/'`crypto/minotaurx/sph_sha2big.c
+
+crypto/minotaurx/libkeymakerconsensus_la-bmw.lo: crypto/minotaurx/bmw.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-bmw.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-bmw.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-bmw.lo `test -f 'crypto/minotaurx/bmw.c' || echo '$(srcdir)/'`crypto/minotaurx/bmw.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-bmw.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-bmw.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/bmw.c' object='crypto/minotaurx/libkeymakerconsensus_la-bmw.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-bmw.lo `test -f 'crypto/minotaurx/bmw.c' || echo '$(srcdir)/'`crypto/minotaurx/bmw.c
+
+crypto/minotaurx/libkeymakerconsensus_la-whirlpool.lo: crypto/minotaurx/whirlpool.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-whirlpool.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-whirlpool.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-whirlpool.lo `test -f 'crypto/minotaurx/whirlpool.c' || echo '$(srcdir)/'`crypto/minotaurx/whirlpool.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-whirlpool.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-whirlpool.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/whirlpool.c' object='crypto/minotaurx/libkeymakerconsensus_la-whirlpool.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-whirlpool.lo `test -f 'crypto/minotaurx/whirlpool.c' || echo '$(srcdir)/'`crypto/minotaurx/whirlpool.c
+
+crypto/minotaurx/libkeymakerconsensus_la-blake.lo: crypto/minotaurx/blake.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-blake.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-blake.lo `test -f 'crypto/minotaurx/blake.c' || echo '$(srcdir)/'`crypto/minotaurx/blake.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/blake.c' object='crypto/minotaurx/libkeymakerconsensus_la-blake.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-blake.lo `test -f 'crypto/minotaurx/blake.c' || echo '$(srcdir)/'`crypto/minotaurx/blake.c
+
+crypto/minotaurx/libkeymakerconsensus_la-blake2s-ref.lo: crypto/minotaurx/blake2s-ref.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-blake2s-ref.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake2s-ref.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-blake2s-ref.lo `test -f 'crypto/minotaurx/blake2s-ref.c' || echo '$(srcdir)/'`crypto/minotaurx/blake2s-ref.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake2s-ref.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-blake2s-ref.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/blake2s-ref.c' object='crypto/minotaurx/libkeymakerconsensus_la-blake2s-ref.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-blake2s-ref.lo `test -f 'crypto/minotaurx/blake2s-ref.c' || echo '$(srcdir)/'`crypto/minotaurx/blake2s-ref.c
+
+crypto/minotaurx/libkeymakerconsensus_la-cubehash.lo: crypto/minotaurx/cubehash.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-cubehash.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-cubehash.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-cubehash.lo `test -f 'crypto/minotaurx/cubehash.c' || echo '$(srcdir)/'`crypto/minotaurx/cubehash.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-cubehash.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-cubehash.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/cubehash.c' object='crypto/minotaurx/libkeymakerconsensus_la-cubehash.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-cubehash.lo `test -f 'crypto/minotaurx/cubehash.c' || echo '$(srcdir)/'`crypto/minotaurx/cubehash.c
+
+crypto/minotaurx/libkeymakerconsensus_la-echo.lo: crypto/minotaurx/echo.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-echo.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-echo.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-echo.lo `test -f 'crypto/minotaurx/echo.c' || echo '$(srcdir)/'`crypto/minotaurx/echo.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-echo.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-echo.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/echo.c' object='crypto/minotaurx/libkeymakerconsensus_la-echo.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-echo.lo `test -f 'crypto/minotaurx/echo.c' || echo '$(srcdir)/'`crypto/minotaurx/echo.c
+
+crypto/minotaurx/libkeymakerconsensus_la-fugue.lo: crypto/minotaurx/fugue.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-fugue.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-fugue.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-fugue.lo `test -f 'crypto/minotaurx/fugue.c' || echo '$(srcdir)/'`crypto/minotaurx/fugue.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-fugue.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-fugue.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/fugue.c' object='crypto/minotaurx/libkeymakerconsensus_la-fugue.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-fugue.lo `test -f 'crypto/minotaurx/fugue.c' || echo '$(srcdir)/'`crypto/minotaurx/fugue.c
+
+crypto/minotaurx/libkeymakerconsensus_la-groestl.lo: crypto/minotaurx/groestl.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-groestl.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-groestl.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-groestl.lo `test -f 'crypto/minotaurx/groestl.c' || echo '$(srcdir)/'`crypto/minotaurx/groestl.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-groestl.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-groestl.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/groestl.c' object='crypto/minotaurx/libkeymakerconsensus_la-groestl.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-groestl.lo `test -f 'crypto/minotaurx/groestl.c' || echo '$(srcdir)/'`crypto/minotaurx/groestl.c
+
+crypto/minotaurx/libkeymakerconsensus_la-hamsi.lo: crypto/minotaurx/hamsi.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-hamsi.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-hamsi.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-hamsi.lo `test -f 'crypto/minotaurx/hamsi.c' || echo '$(srcdir)/'`crypto/minotaurx/hamsi.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-hamsi.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-hamsi.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/hamsi.c' object='crypto/minotaurx/libkeymakerconsensus_la-hamsi.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-hamsi.lo `test -f 'crypto/minotaurx/hamsi.c' || echo '$(srcdir)/'`crypto/minotaurx/hamsi.c
+
+crypto/minotaurx/libkeymakerconsensus_la-haval.lo: crypto/minotaurx/haval.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-haval.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-haval.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-haval.lo `test -f 'crypto/minotaurx/haval.c' || echo '$(srcdir)/'`crypto/minotaurx/haval.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-haval.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-haval.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/haval.c' object='crypto/minotaurx/libkeymakerconsensus_la-haval.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-haval.lo `test -f 'crypto/minotaurx/haval.c' || echo '$(srcdir)/'`crypto/minotaurx/haval.c
+
+crypto/minotaurx/libkeymakerconsensus_la-jh.lo: crypto/minotaurx/jh.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-jh.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-jh.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-jh.lo `test -f 'crypto/minotaurx/jh.c' || echo '$(srcdir)/'`crypto/minotaurx/jh.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-jh.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-jh.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/jh.c' object='crypto/minotaurx/libkeymakerconsensus_la-jh.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-jh.lo `test -f 'crypto/minotaurx/jh.c' || echo '$(srcdir)/'`crypto/minotaurx/jh.c
+
+crypto/minotaurx/libkeymakerconsensus_la-keccak.lo: crypto/minotaurx/keccak.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-keccak.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-keccak.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-keccak.lo `test -f 'crypto/minotaurx/keccak.c' || echo '$(srcdir)/'`crypto/minotaurx/keccak.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-keccak.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-keccak.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/keccak.c' object='crypto/minotaurx/libkeymakerconsensus_la-keccak.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-keccak.lo `test -f 'crypto/minotaurx/keccak.c' || echo '$(srcdir)/'`crypto/minotaurx/keccak.c
+
+crypto/minotaurx/libkeymakerconsensus_la-luffa.lo: crypto/minotaurx/luffa.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-luffa.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-luffa.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-luffa.lo `test -f 'crypto/minotaurx/luffa.c' || echo '$(srcdir)/'`crypto/minotaurx/luffa.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-luffa.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-luffa.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/luffa.c' object='crypto/minotaurx/libkeymakerconsensus_la-luffa.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-luffa.lo `test -f 'crypto/minotaurx/luffa.c' || echo '$(srcdir)/'`crypto/minotaurx/luffa.c
+
+crypto/minotaurx/libkeymakerconsensus_la-Lyra2.lo: crypto/minotaurx/Lyra2.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-Lyra2.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-Lyra2.lo `test -f 'crypto/minotaurx/Lyra2.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/Lyra2.c' object='crypto/minotaurx/libkeymakerconsensus_la-Lyra2.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-Lyra2.lo `test -f 'crypto/minotaurx/Lyra2.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2.c
+
+crypto/minotaurx/libkeymakerconsensus_la-Lyra2RE.lo: crypto/minotaurx/Lyra2RE.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-Lyra2RE.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2RE.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-Lyra2RE.lo `test -f 'crypto/minotaurx/Lyra2RE.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2RE.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2RE.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Lyra2RE.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/Lyra2RE.c' object='crypto/minotaurx/libkeymakerconsensus_la-Lyra2RE.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-Lyra2RE.lo `test -f 'crypto/minotaurx/Lyra2RE.c' || echo '$(srcdir)/'`crypto/minotaurx/Lyra2RE.c
+
+crypto/minotaurx/libkeymakerconsensus_la-shabal.lo: crypto/minotaurx/shabal.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-shabal.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shabal.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-shabal.lo `test -f 'crypto/minotaurx/shabal.c' || echo '$(srcdir)/'`crypto/minotaurx/shabal.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shabal.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shabal.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/shabal.c' object='crypto/minotaurx/libkeymakerconsensus_la-shabal.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-shabal.lo `test -f 'crypto/minotaurx/shabal.c' || echo '$(srcdir)/'`crypto/minotaurx/shabal.c
+
+crypto/minotaurx/libkeymakerconsensus_la-shavite.lo: crypto/minotaurx/shavite.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-shavite.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shavite.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-shavite.lo `test -f 'crypto/minotaurx/shavite.c' || echo '$(srcdir)/'`crypto/minotaurx/shavite.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shavite.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-shavite.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/shavite.c' object='crypto/minotaurx/libkeymakerconsensus_la-shavite.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-shavite.lo `test -f 'crypto/minotaurx/shavite.c' || echo '$(srcdir)/'`crypto/minotaurx/shavite.c
+
+crypto/minotaurx/libkeymakerconsensus_la-simd.lo: crypto/minotaurx/simd.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-simd.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-simd.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-simd.lo `test -f 'crypto/minotaurx/simd.c' || echo '$(srcdir)/'`crypto/minotaurx/simd.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-simd.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-simd.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/simd.c' object='crypto/minotaurx/libkeymakerconsensus_la-simd.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-simd.lo `test -f 'crypto/minotaurx/simd.c' || echo '$(srcdir)/'`crypto/minotaurx/simd.c
+
+crypto/minotaurx/libkeymakerconsensus_la-skein.lo: crypto/minotaurx/skein.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-skein.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-skein.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-skein.lo `test -f 'crypto/minotaurx/skein.c' || echo '$(srcdir)/'`crypto/minotaurx/skein.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-skein.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-skein.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/skein.c' object='crypto/minotaurx/libkeymakerconsensus_la-skein.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-skein.lo `test -f 'crypto/minotaurx/skein.c' || echo '$(srcdir)/'`crypto/minotaurx/skein.c
+
+crypto/minotaurx/libkeymakerconsensus_la-Sponge.lo: crypto/minotaurx/Sponge.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/libkeymakerconsensus_la-Sponge.lo -MD -MP -MF crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Sponge.Tpo -c -o crypto/minotaurx/libkeymakerconsensus_la-Sponge.lo `test -f 'crypto/minotaurx/Sponge.c' || echo '$(srcdir)/'`crypto/minotaurx/Sponge.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Sponge.Tpo crypto/minotaurx/$(DEPDIR)/libkeymakerconsensus_la-Sponge.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/Sponge.c' object='crypto/minotaurx/libkeymakerconsensus_la-Sponge.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/libkeymakerconsensus_la-Sponge.lo `test -f 'crypto/minotaurx/Sponge.c' || echo '$(srcdir)/'`crypto/minotaurx/Sponge.c
+
+crypto/minotaurx/yespower/libkeymakerconsensus_la-yespower.lo: crypto/minotaurx/yespower/yespower.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/yespower/libkeymakerconsensus_la-yespower.lo -MD -MP -MF crypto/minotaurx/yespower/$(DEPDIR)/libkeymakerconsensus_la-yespower.Tpo -c -o crypto/minotaurx/yespower/libkeymakerconsensus_la-yespower.lo `test -f 'crypto/minotaurx/yespower/yespower.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/yespower.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/yespower/$(DEPDIR)/libkeymakerconsensus_la-yespower.Tpo crypto/minotaurx/yespower/$(DEPDIR)/libkeymakerconsensus_la-yespower.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/yespower/yespower.c' object='crypto/minotaurx/yespower/libkeymakerconsensus_la-yespower.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/yespower/libkeymakerconsensus_la-yespower.lo `test -f 'crypto/minotaurx/yespower/yespower.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/yespower.c
+
+crypto/minotaurx/yespower/crypto/libkeymakerconsensus_la-sha256.lo: crypto/minotaurx/yespower/crypto/sha256.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT crypto/minotaurx/yespower/crypto/libkeymakerconsensus_la-sha256.lo -MD -MP -MF crypto/minotaurx/yespower/crypto/$(DEPDIR)/libkeymakerconsensus_la-sha256.Tpo -c -o crypto/minotaurx/yespower/crypto/libkeymakerconsensus_la-sha256.lo `test -f 'crypto/minotaurx/yespower/crypto/sha256.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/crypto/sha256.c
+	$(AM_V_at)$(am__mv) crypto/minotaurx/yespower/crypto/$(DEPDIR)/libkeymakerconsensus_la-sha256.Tpo crypto/minotaurx/yespower/crypto/$(DEPDIR)/libkeymakerconsensus_la-sha256.Plo
+#	$(AM_V_CC)source='crypto/minotaurx/yespower/crypto/sha256.c' object='crypto/minotaurx/yespower/crypto/libkeymakerconsensus_la-sha256.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkeymakerconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o crypto/minotaurx/yespower/crypto/libkeymakerconsensus_la-sha256.lo `test -f 'crypto/minotaurx/yespower/crypto/sha256.c' || echo '$(srcdir)/'`crypto/minotaurx/yespower/crypto/sha256.c
 
 .cc.o:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -9689,6 +10562,9 @@ clean-libtool:
 	-rm -rf compat/.libs compat/_libs
 	-rm -rf consensus/.libs consensus/_libs
 	-rm -rf crypto/.libs crypto/_libs
+	-rm -rf crypto/minotaurx/.libs crypto/minotaurx/_libs
+	-rm -rf crypto/minotaurx/yespower/.libs crypto/minotaurx/yespower/_libs
+	-rm -rf crypto/minotaurx/yespower/crypto/.libs crypto/minotaurx/yespower/crypto/_libs
 	-rm -rf primitives/.libs primitives/_libs
 	-rm -rf qt/.libs qt/_libs
 	-rm -rf qt/test/.libs qt/test/_libs
@@ -10090,6 +10966,12 @@ distclean-generic:
 	-rm -f consensus/$(am__dirstamp)
 	-rm -f crypto/$(DEPDIR)/$(am__dirstamp)
 	-rm -f crypto/$(am__dirstamp)
+	-rm -f crypto/minotaurx/$(DEPDIR)/$(am__dirstamp)
+	-rm -f crypto/minotaurx/$(am__dirstamp)
+	-rm -f crypto/minotaurx/yespower/$(DEPDIR)/$(am__dirstamp)
+	-rm -f crypto/minotaurx/yespower/$(am__dirstamp)
+	-rm -f crypto/minotaurx/yespower/crypto/$(DEPDIR)/$(am__dirstamp)
+	-rm -f crypto/minotaurx/yespower/crypto/$(am__dirstamp)
 	-rm -f leveldb/$(am__dirstamp)
 	-rm -f leveldb/db/$(DEPDIR)/$(am__dirstamp)
 	-rm -f leveldb/db/$(am__dirstamp)
@@ -10135,7 +11017,7 @@ clean-am: clean-binPROGRAMS clean-generic clean-libLTLIBRARIES \
 	clean-libtool clean-local clean-noinstPROGRAMS mostlyclean-am
 
 distclean: distclean-recursive
-	-rm -rf ./$(DEPDIR) bench/$(DEPDIR) compat/$(DEPDIR) consensus/$(DEPDIR) crypto/$(DEPDIR) leveldb/db/$(DEPDIR) leveldb/helpers/memenv/$(DEPDIR) leveldb/port/$(DEPDIR) leveldb/table/$(DEPDIR) leveldb/util/$(DEPDIR) policy/$(DEPDIR) primitives/$(DEPDIR) qt/$(DEPDIR) qt/test/$(DEPDIR) rpc/$(DEPDIR) script/$(DEPDIR) support/$(DEPDIR) test/$(DEPDIR) wallet/$(DEPDIR) wallet/test/$(DEPDIR) zmq/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) bench/$(DEPDIR) compat/$(DEPDIR) consensus/$(DEPDIR) crypto/$(DEPDIR) crypto/minotaurx/$(DEPDIR) crypto/minotaurx/yespower/$(DEPDIR) crypto/minotaurx/yespower/crypto/$(DEPDIR) leveldb/db/$(DEPDIR) leveldb/helpers/memenv/$(DEPDIR) leveldb/port/$(DEPDIR) leveldb/table/$(DEPDIR) leveldb/util/$(DEPDIR) policy/$(DEPDIR) primitives/$(DEPDIR) qt/$(DEPDIR) qt/test/$(DEPDIR) rpc/$(DEPDIR) script/$(DEPDIR) support/$(DEPDIR) test/$(DEPDIR) wallet/$(DEPDIR) wallet/test/$(DEPDIR) zmq/$(DEPDIR)
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -10181,7 +11063,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
-	-rm -rf ./$(DEPDIR) bench/$(DEPDIR) compat/$(DEPDIR) consensus/$(DEPDIR) crypto/$(DEPDIR) leveldb/db/$(DEPDIR) leveldb/helpers/memenv/$(DEPDIR) leveldb/port/$(DEPDIR) leveldb/table/$(DEPDIR) leveldb/util/$(DEPDIR) policy/$(DEPDIR) primitives/$(DEPDIR) qt/$(DEPDIR) qt/test/$(DEPDIR) rpc/$(DEPDIR) script/$(DEPDIR) support/$(DEPDIR) test/$(DEPDIR) wallet/$(DEPDIR) wallet/test/$(DEPDIR) zmq/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) bench/$(DEPDIR) compat/$(DEPDIR) consensus/$(DEPDIR) crypto/$(DEPDIR) crypto/minotaurx/$(DEPDIR) crypto/minotaurx/yespower/$(DEPDIR) crypto/minotaurx/yespower/crypto/$(DEPDIR) leveldb/db/$(DEPDIR) leveldb/helpers/memenv/$(DEPDIR) leveldb/port/$(DEPDIR) leveldb/table/$(DEPDIR) leveldb/util/$(DEPDIR) policy/$(DEPDIR) primitives/$(DEPDIR) qt/$(DEPDIR) qt/test/$(DEPDIR) rpc/$(DEPDIR) script/$(DEPDIR) support/$(DEPDIR) test/$(DEPDIR) wallet/$(DEPDIR) wallet/test/$(DEPDIR) zmq/$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
