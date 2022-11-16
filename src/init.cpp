@@ -799,7 +799,7 @@ void InitLogging()
    LogPrintf("K K  E      Y   M   M A  A K K  E    R R  \n");
    LogPrintf("K  K EEEE   Y   M   M A  A K  K EEEE R  RR\n");  
    LogPrintf(PACKAGE_NAME " version %s\n", version_string);
-   LogPrintf("\n\n\n\n\n\n\n\n\n");
+   //LogPrintf("\n\n\n\n\n\n\n\n\n");
    MilliSleep(5*1000); 
  
 }
