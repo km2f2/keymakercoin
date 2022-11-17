@@ -17,8 +17,6 @@ v1.0.0.6   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.0.6-fo
 
 
 
-
-
 Links
 ----------------
 
@@ -32,6 +30,7 @@ Links
 
 • Install Instructions:  https://github.com/keymakercoin/keymakercoin/wiki
 
+• Whitepaper:  https://github.com/keymakercoin/keymakercoin/raw/main/Whitepaper.pdf
 
 
 
