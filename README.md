@@ -20,6 +20,8 @@ Links
 
 • Telegram: https://t.me/KeymakerCoin
 
+• Install Instructions:  https://github.com/keymakercoin/keymakercoin/wiki
+
 
 
 
