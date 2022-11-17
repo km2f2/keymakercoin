@@ -6,7 +6,7 @@
 
 ## Manditory Update 
 
-v1.0.0.6   https://github.com/keymakercoin/keymakercoin/tree/a74c778c4dacecd16750c96a65b637c98425ece8
+v1.0.0.6   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.0.6-fork-1
 
 
 
