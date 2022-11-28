@@ -64,7 +64,7 @@ UniValue GetNetworkHashPS(int lookup, int height, POW_TYPE powType) {
         lookup = pb->nHeight;
 
      // Skip incorrect powType and PoS
-    while(IsMinoEnabled(pb, Params().GetConsensus()) && pb->GetBlockHeader().GetPoWType() != powType || pb->IsProofOfStake() ) {
+    while(IsMinoEnabled(pb, Params().GetConsensus()) && (pb->GetBlockHeader().GetPoWType() != powType || pb->IsProofOfStake()) ) {
         assert (pb->pprev);
         pb = pb->pprev;
     }
@@ -83,7 +83,7 @@ UniValue GetNetworkHashPS(int lookup, int height, POW_TYPE powType) {
     for (int i = 0; i < lookup; i++) {
         pb = pb->pprev;
 
-        while(IsMinoEnabled(pb, Params().GetConsensus()) && pb->GetBlockHeader().GetPoWType() != powType || pb->IsProofOfStake() ) {
+        while(IsMinoEnabled(pb, Params().GetConsensus()) && (pb->GetBlockHeader().GetPoWType() != powType || pb->IsProofOfStake()) ) {
             assert (pb->pprev);
             pb = pb->pprev;
         }
@@ -97,7 +97,7 @@ UniValue GetNetworkHashPS(int lookup, int height, POW_TYPE powType) {
         maxTime = std::max(time, maxTime);
         workDiff += GetBlockProof(*pb, powType); 
 	
-	LogPrintf("WORKDIFF %d\r", workDiff.getdouble());
+	//LogPrintf("WORKDIFF %d\r", workDiff.getdouble());
     }
 
     // In case there's a situation where minTime == maxTime, we don't want a divide by zero exception.

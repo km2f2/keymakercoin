@@ -1060,7 +1060,9 @@ int64_t GetProofOfStakeReward(CAmount nCoinAge, const CBlockIndex* pindex)
         else if (xHeight > 15242400 && xHeight <= 15768000) { nRewardCoinYear = 0.0009 * COIN;}
         else if (xHeight > 15768000 && xHeight <= 16293600) { nRewardCoinYear =  0.0008 * COIN;} 
         else if (xHeight > 16293600 && xHeight <= 16819200) { nRewardCoinYear =  0.0007 * COIN;} 
-        else {nRewardCoinYear =  0.0005 * COIN;}  //2058 - 35 Yearsif (nRewardCoinYear > 0) {nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;}
+        else {nRewardCoinYear =  0.0005 * COIN;} 
+        
+       
 
 
 if (nRewardCoinYear > 0) {nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;}
