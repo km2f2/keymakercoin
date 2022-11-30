@@ -49,7 +49,7 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/join.hpp>
 #include <boost/thread.hpp>
-#include <boost/bind.hpp>
+
 
 #if defined(NDEBUG)
 # error "Keymaker cannot be compiled without assertions."
