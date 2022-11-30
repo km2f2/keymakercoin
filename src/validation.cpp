@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <validation.h>
-#include <functional>
+
 #include <arith_uint256.h>
 #include <chain.h>
 #include <chainparams.h>
@@ -49,6 +49,7 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/join.hpp>
 #include <boost/thread.hpp>
+#include <boost/bind.hpp>
 
 #if defined(NDEBUG)
 # error "Keymaker cannot be compiled without assertions."
