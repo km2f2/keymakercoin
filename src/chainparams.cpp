@@ -107,9 +107,6 @@ public:
         fMineBlocksOnDemand = false;
 
 
-￼
-
-
 
 checkpointData = {
             {
