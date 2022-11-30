@@ -106,17 +106,23 @@ public:
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
 
+
+￼
+
+
+
 checkpointData = {
             {
                 {0, uint256S("0x9f67f1835170e36cb4ec265db7d42542743bba39d9f0cc7f0bb73a7b900860f7")},
+                {48511, uint256S("0xc6b561e68dd2c92bac6dbca02da252c3b95e0f2eb5aee5defaf97c62ed6dc16e")},
             }
         };
 
         chainTxData = ChainTxData{
 			// Data from rpc: getchaintxstats 0
-			/* nTime    */ 1667184351,
-			/* nTxCount */ 0,
-			/* dTxRate  */ 0
+			/* nTime    */  1669828613,
+			/* nTxCount */  80793,
+			/* dTxRate  */  0.03236952763303664
         };
     }
 };
