@@ -46,7 +46,7 @@ public:
         consensus.nCoinbaseMaturity = 40;
         consensus.nDgwPastBlocks = 30;
 
-        consensus.nStartMiningTime = 1667184351; 
+        //consensus.nStartMiningTime = 1667184351; 
   
 	    consensus.nPowTargetSpacingCH = 187.5; //460.8 blocks 40%
 	    consensus.nPowTargetSpacingGR = 125; //691.2 blocks 60%
