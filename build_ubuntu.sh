@@ -27,6 +27,7 @@ sudo apt-get install libzmq3-dev -y
 
 
 # To compile wallet
+chmod +x ./contrib/install_db4.sh
 ./contrib/install_db4.sh `pwd`
 
 #QT
