@@ -4,15 +4,9 @@
 ![](src/qt/res/images/logo.png)
 
 
-## Manditory Update 
-
-v1.0.0.6   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.0.6-fork-1
-
-
-
 ## Current Stable Version
 
-v1.0.0.6   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.0.6-fork-1
+v1.0.1.12   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.1.12
 
 
 
