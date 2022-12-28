@@ -6,7 +6,7 @@
 
 ## Current Stable Version
 
-v1.0.1.12   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.1.12
+v1.0.1.13   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.1.13
 
 
 
