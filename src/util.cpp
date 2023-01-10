@@ -666,7 +666,8 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
         FILE* configFile = fopen(GetConfigFile(confPath).string().c_str(), "a");
 
         if (configFile != NULL) {
-            std::string strHeader = "# Keymaker Coin config file\n"
+            std::string strHeader = "# Keymaker Coin Metallica Red Rage Edition\n"
+                          "# Keymaker Coin config file\n"
                           "#rpcuser=username\n"
                           "#rpcpassword=password\n"
                           "#server=1\n"
@@ -684,12 +685,12 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
                           "addnode=seeder.keymaker.cc\n"
                           "\n"          
                           "# Additional Nodes:\n"
-                          "addnode=139.162.12.95:12421\n"
-                          "addnode=172.104.93.28:12421\n"
-                          "addnode=192.46.222.212:4441\n"
+                          "addnode=95.159.105.69:12421\n"
+                          "addnode=35.236.38.250:12421\n"
+                          "addnode=34.131.176.108:12421\n"
                           "addnode=192.46.222.212:12421\n"
                           "addnode=99.8.222.129:4441\n"
-                          "addnode=198.58.112.148:12421\n";
+                          "addnode=24.165.149.101:12421\n";
                
 
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
