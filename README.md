@@ -67,18 +67,7 @@ Specifications:
 
 
 
-Distribution:
-----------------------
-
-• 50% will be held for liquidity  (2,500,000)
-
-• 40% will be used for rewards to the miners (2,000,000) 
-
-• 5% will be held as liquidity for charity (250,000)
-
-• 5% will be provided to the dev team (250,000)
-
-
+ 
 
 
 
