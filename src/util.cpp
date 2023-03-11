@@ -687,7 +687,7 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
                           "\n"          
                           "# Additional Nodes:\n"
                           "addnode=192.46.222.212:12421\n"
-                          "addnode=99.8.222.129:12421\n"
+                          "addnode=99.8.222.129:12421\n";
               
 
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
