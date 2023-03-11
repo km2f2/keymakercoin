@@ -686,12 +686,9 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
                           "addnode=seeder.keymaker.cc\n"
                           "\n"          
                           "# Additional Nodes:\n"
-                          "addnode=95.159.105.69:12421\n"
-                          "addnode=35.236.38.250:12421\n"
-                          "addnode=34.131.176.108:12421\n"
                           "addnode=192.46.222.212:12421\n"
-                          "addnode=99.8.222.129:4441\n"
-                          "addnode=24.165.149.101:12421\n";               
+                          "addnode=99.8.222.129:12421\n"
+              
 
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
