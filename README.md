@@ -62,8 +62,7 @@ Specifications:
 • RPC Port:         12422
 
 • Max supply:       27,000,000
-
-• Premined:         6,000,000
+ 
 
 
 
