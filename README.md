@@ -6,7 +6,7 @@
 
 ## Current Stable Version
 
-v1.0.1.14   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.1.14
+v1.0.1.15   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.1.15
 
 
 
@@ -51,7 +51,7 @@ Specifications:
 
 • Uses the POW and POS
 
-• Algorithm:        Curvehash
+• Algorithm:        Curvehash / MinotaurX 
 
 • Block Time:       60 seconds
 
