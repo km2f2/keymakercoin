@@ -28,7 +28,7 @@ Links
 
 
 
-How to Stake Mining
+How to Stake using POS
 ----------------------
 
 Staking is based on your total amount and the total time you hodl the coin.
