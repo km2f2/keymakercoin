@@ -1,4 +1,4 @@
-# Keymaker-Coin-Cryptocurrency
+# Keymaker
 
 
 ![](src/qt/res/images/logo.png)
