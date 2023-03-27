@@ -1,9 +1,6 @@
 # Keymaker
 
 
-![](src/qt/res/images/logo.png)
-
-
 ## Current Stable Version
 
 v1.0.1.15   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.1.15
