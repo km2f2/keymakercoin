@@ -1,7 +1,4 @@
-# Keymaker-Coin-Cryptocurrency
-
-
-![](src/qt/res/images/logo.png)
+# Keymaker
 
 
 ## Current Stable Version
@@ -14,11 +11,9 @@ v1.0.1.15   https://github.com/keymakercoin/keymakercoin/releases/tag/v1.0.1.15
 Links
 ----------------
 
-• Reddit: https://www.reddit.com/r/keymakercc/
+
 
 • Twitter: https://twitter.com/i/lists/1467172215959527426
-
-• Webpage: https://www.keymaker.cc
 
 • Telegram: https://t.me/KeymakerCoin
 
@@ -28,7 +23,7 @@ Links
 
 
 
-How to Stake Mining
+How to Stake using POS
 ----------------------
 
 Staking is based on your total amount and the total time you hodl the coin.
